@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B1CA83428E4F17600D41D2A /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA83328E4F17600D41D2A /* Tests_iOS.swift */; };
+		9B1CA83628E4F17600D41D2A /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA83528E4F17600D41D2A /* Tests_iOSLaunchTests.swift */; };
+		9B1CA84028E4F17600D41D2A /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA83F28E4F17600D41D2A /* Tests_macOS.swift */; };
+		9B1CA84228E4F17600D41D2A /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA84128E4F17600D41D2A /* Tests_macOSLaunchTests.swift */; };
+		9B1CA84328E4F17600D41D2A /* VH_AssistantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA81B28E4F17500D41D2A /* VH_AssistantApp.swift */; };
+		9B1CA84428E4F17600D41D2A /* VH_AssistantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA81B28E4F17500D41D2A /* VH_AssistantApp.swift */; };
+		9B1CA84528E4F17600D41D2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA81C28E4F17500D41D2A /* ContentView.swift */; };
+		9B1CA84628E4F17600D41D2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA81C28E4F17500D41D2A /* ContentView.swift */; };
+		9B1CA84728E4F17600D41D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA81D28E4F17600D41D2A /* Assets.xcassets */; };
+		9B1CA84828E4F17600D41D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA81D28E4F17600D41D2A /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9B1CA83028E4F17600D41D2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B1CA81628E4F17500D41D2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B1CA82128E4F17600D41D2A;
+			remoteInfo = "VH Assistant (iOS)";
+		};
+		9B1CA83C28E4F17600D41D2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B1CA81628E4F17500D41D2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B1CA82728E4F17600D41D2A;
+			remoteInfo = "VH Assistant (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9B1CA81B28E4F17500D41D2A /* VH_AssistantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VH_AssistantApp.swift; sourceTree = "<group>"; };
+		9B1CA81C28E4F17500D41D2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9B1CA81D28E4F17600D41D2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B1CA82228E4F17600D41D2A /* VH Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VH Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B1CA82828E4F17600D41D2A /* VH Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VH Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B1CA82A28E4F17600D41D2A /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		9B1CA82F28E4F17600D41D2A /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B1CA83328E4F17600D41D2A /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		9B1CA83528E4F17600D41D2A /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
+		9B1CA83B28E4F17600D41D2A /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B1CA83F28E4F17600D41D2A /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		9B1CA84128E4F17600D41D2A /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B1CA81F28E4F17600D41D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B1CA82528E4F17600D41D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B1CA82C28E4F17600D41D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B1CA83828E4F17600D41D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B1CA81528E4F17500D41D2A = {
+			isa = PBXGroup;
+			children = (
+				9B1CA81A28E4F17500D41D2A /* Shared */,
+				9B1CA82928E4F17600D41D2A /* macOS */,
+				9B1CA83228E4F17600D41D2A /* Tests iOS */,
+				9B1CA83E28E4F17600D41D2A /* Tests macOS */,
+				9B1CA82328E4F17600D41D2A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B1CA81A28E4F17500D41D2A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9B1CA81B28E4F17500D41D2A /* VH_AssistantApp.swift */,
+				9B1CA81C28E4F17500D41D2A /* ContentView.swift */,
+				9B1CA81D28E4F17600D41D2A /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		9B1CA82328E4F17600D41D2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B1CA82228E4F17600D41D2A /* VH Assistant.app */,
+				9B1CA82828E4F17600D41D2A /* VH Assistant.app */,
+				9B1CA82F28E4F17600D41D2A /* Tests iOS.xctest */,
+				9B1CA83B28E4F17600D41D2A /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B1CA82928E4F17600D41D2A /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				9B1CA82A28E4F17600D41D2A /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		9B1CA83228E4F17600D41D2A /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9B1CA83328E4F17600D41D2A /* Tests_iOS.swift */,
+				9B1CA83528E4F17600D41D2A /* Tests_iOSLaunchTests.swift */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		9B1CA83E28E4F17600D41D2A /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				9B1CA83F28E4F17600D41D2A /* Tests_macOS.swift */,
+				9B1CA84128E4F17600D41D2A /* Tests_macOSLaunchTests.swift */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B1CA82128E4F17600D41D2A /* VH Assistant (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B1CA84B28E4F17600D41D2A /* Build configuration list for PBXNativeTarget "VH Assistant (iOS)" */;
+			buildPhases = (
+				9B1CA81E28E4F17600D41D2A /* Sources */,
+				9B1CA81F28E4F17600D41D2A /* Frameworks */,
+				9B1CA82028E4F17600D41D2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VH Assistant (iOS)";
+			productName = "VH Assistant (iOS)";
+			productReference = 9B1CA82228E4F17600D41D2A /* VH Assistant.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9B1CA82728E4F17600D41D2A /* VH Assistant (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B1CA84E28E4F17600D41D2A /* Build configuration list for PBXNativeTarget "VH Assistant (macOS)" */;
+			buildPhases = (
+				9B1CA82428E4F17600D41D2A /* Sources */,
+				9B1CA82528E4F17600D41D2A /* Frameworks */,
+				9B1CA82628E4F17600D41D2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VH Assistant (macOS)";
+			productName = "VH Assistant (macOS)";
+			productReference = 9B1CA82828E4F17600D41D2A /* VH Assistant.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9B1CA82E28E4F17600D41D2A /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B1CA85128E4F17600D41D2A /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				9B1CA82B28E4F17600D41D2A /* Sources */,
+				9B1CA82C28E4F17600D41D2A /* Frameworks */,
+				9B1CA82D28E4F17600D41D2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B1CA83128E4F17600D41D2A /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = 9B1CA82F28E4F17600D41D2A /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		9B1CA83A28E4F17600D41D2A /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B1CA85428E4F17600D41D2A /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				9B1CA83728E4F17600D41D2A /* Sources */,
+				9B1CA83828E4F17600D41D2A /* Frameworks */,
+				9B1CA83928E4F17600D41D2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B1CA83D28E4F17600D41D2A /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = 9B1CA83B28E4F17600D41D2A /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B1CA81628E4F17500D41D2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					9B1CA82128E4F17600D41D2A = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					9B1CA82728E4F17600D41D2A = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					9B1CA82E28E4F17600D41D2A = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 9B1CA82128E4F17600D41D2A;
+					};
+					9B1CA83A28E4F17600D41D2A = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 9B1CA82728E4F17600D41D2A;
+					};
+				};
+			};
+			buildConfigurationList = 9B1CA81928E4F17500D41D2A /* Build configuration list for PBXProject "VH Assistant" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B1CA81528E4F17500D41D2A;
+			productRefGroup = 9B1CA82328E4F17600D41D2A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B1CA82128E4F17600D41D2A /* VH Assistant (iOS) */,
+				9B1CA82728E4F17600D41D2A /* VH Assistant (macOS) */,
+				9B1CA82E28E4F17600D41D2A /* Tests iOS */,
+				9B1CA83A28E4F17600D41D2A /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B1CA82028E4F17600D41D2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B1CA84728E4F17600D41D2A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B1CA82628E4F17600D41D2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B1CA84828E4F17600D41D2A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B1CA82D28E4F17600D41D2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B1CA83928E4F17600D41D2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B1CA81E28E4F17600D41D2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B1CA84528E4F17600D41D2A /* ContentView.swift in Sources */,
+				9B1CA84328E4F17600D41D2A /* VH_AssistantApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B1CA82428E4F17600D41D2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B1CA84628E4F17600D41D2A /* ContentView.swift in Sources */,
+				9B1CA84428E4F17600D41D2A /* VH_AssistantApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B1CA82B28E4F17600D41D2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B1CA83628E4F17600D41D2A /* Tests_iOSLaunchTests.swift in Sources */,
+				9B1CA83428E4F17600D41D2A /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B1CA83728E4F17600D41D2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B1CA84228E4F17600D41D2A /* Tests_macOSLaunchTests.swift in Sources */,
+				9B1CA84028E4F17600D41D2A /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B1CA83128E4F17600D41D2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B1CA82128E4F17600D41D2A /* VH Assistant (iOS) */;
+			targetProxy = 9B1CA83028E4F17600D41D2A /* PBXContainerItemProxy */;
+		};
+		9B1CA83D28E4F17600D41D2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B1CA82728E4F17600D41D2A /* VH Assistant (macOS) */;
+			targetProxy = 9B1CA83C28E4F17600D41D2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9B1CA84928E4F17600D41D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9B1CA84A28E4F17600D41D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		9B1CA84C28E4F17600D41D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96SB47X67B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.craunincproductions.VH-Assistant";
+				PRODUCT_NAME = "VH Assistant";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B1CA84D28E4F17600D41D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96SB47X67B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.craunincproductions.VH-Assistant";
+				PRODUCT_NAME = "VH Assistant";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B1CA84F28E4F17600D41D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96SB47X67B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.craunincproductions.VH-Assistant";
+				PRODUCT_NAME = "VH Assistant";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9B1CA85028E4F17600D41D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96SB47X67B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.craunincproductions.VH-Assistant";
+				PRODUCT_NAME = "VH Assistant";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9B1CA85228E4F17600D41D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96SB47X67B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.craunincproductions.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VH Assistant (iOS)";
+			};
+			name = Debug;
+		};
+		9B1CA85328E4F17600D41D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96SB47X67B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.craunincproductions.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VH Assistant (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B1CA85528E4F17600D41D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96SB47X67B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.craunincproductions.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "VH Assistant (macOS)";
+			};
+			name = Debug;
+		};
+		9B1CA85628E4F17600D41D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96SB47X67B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.craunincproductions.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "VH Assistant (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B1CA81928E4F17500D41D2A /* Build configuration list for PBXProject "VH Assistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B1CA84928E4F17600D41D2A /* Debug */,
+				9B1CA84A28E4F17600D41D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B1CA84B28E4F17600D41D2A /* Build configuration list for PBXNativeTarget "VH Assistant (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B1CA84C28E4F17600D41D2A /* Debug */,
+				9B1CA84D28E4F17600D41D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B1CA84E28E4F17600D41D2A /* Build configuration list for PBXNativeTarget "VH Assistant (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B1CA84F28E4F17600D41D2A /* Debug */,
+				9B1CA85028E4F17600D41D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B1CA85128E4F17600D41D2A /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B1CA85228E4F17600D41D2A /* Debug */,
+				9B1CA85328E4F17600D41D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B1CA85428E4F17600D41D2A /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B1CA85528E4F17600D41D2A /* Debug */,
+				9B1CA85628E4F17600D41D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B1CA81628E4F17500D41D2A /* Project object */;
+}
