@@ -19,7 +19,19 @@ class Database: ObservableObject {
     
     init() {
         reset()
+        
+        associateResarch()
         fetchCharacters()
+    }
+    
+    func associateResarch() {
+        for group in researchGroups {
+            for research in researches {
+                if group.research.contains(where: { $0.name == research.name }) {
+                    group.associateResearch(research)
+                }
+            }
+        }
     }
     
     func fetchCharacters() {

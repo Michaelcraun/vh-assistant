@@ -7,7 +7,8 @@
 
 import Foundation
 
-class Research {
+class Research: Identifiable {
+    var id: String
     var base: Int
     var modIds: [String]
     var name: String
@@ -15,6 +16,7 @@ class Research {
     var current: Int
     
     init(name: String) {
+        self.id = name
         self.base = 0
         self.modIds = []
         self.name = name
@@ -23,6 +25,7 @@ class Research {
     }
     
     init(from dict: [String : Any]) {
+        self.id = dict["name"] as? String ?? "ERROR"
         self.base = dict["cost"] as? Int ?? 0
         self.modIds = dict["modIds"] as? [String] ?? []
         self.name = dict["name"] as? String ?? "ERROR"

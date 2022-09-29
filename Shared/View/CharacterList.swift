@@ -15,7 +15,7 @@ struct CharacterList: View {
     
     var body: some View {
         VStack {
-            HStack {
+            RaisedPanel {
                 Text("Add Playthrough")
                     .padding(.horizontal, 8)
                     .frame(maxWidth: .infinity)
@@ -23,17 +23,11 @@ struct CharacterList: View {
                         isAddingPlaythrough.toggle()
                     }
             }
-            .padding(8)
-            .background {
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(.white)
-                    .shadow(color: .gray, radius: 1, x: 2, y: 2)
-            }
             
             ScrollView {
                 LazyVStack {
                     ForEach(database.characters) { character in
-                        HStack {
+                        RaisedPanel {
                             Text(character.name)
                             Spacer()
                             VStack {
@@ -47,12 +41,6 @@ struct CharacterList: View {
                                 }
                             }
                             .font(.caption)
-                        }
-                        .padding(8)
-                        .background {
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(.white)
-                                .shadow(color: .gray, radius: 1, x: 2, y: 2)
                         }
                     }
                 }

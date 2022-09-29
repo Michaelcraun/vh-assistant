@@ -7,19 +7,26 @@
 
 import Foundation
 
-class ResearchGroup {
+class ResearchGroup: Identifiable {
     var globalCostIncrease: Double
     var groupCostIncrease: CostIncrease
-    var name: String
+    var id: String
     var research: [Research]
     var title: String
     
     init(from dict: [String : Any], with name: String) {
         self.globalCostIncrease = dict["globalCostIncrease"] as? Double ?? 0.0
         self.groupCostIncrease = CostIncrease(from: dict["groupCostIncrease"] as? [String : Any] ?? [ : ])
-        self.name = name
+        self.id = name
         self.research = (dict["research"] as? [String] ?? []).map({ Research(name: $0) })
         self.title = dict["title"] as? String ?? "ERROR"
+    }
+    
+    func associateResearch(_ associated: Research) {
+        if let index = research.firstIndex(where: { $0.id == associated.id }) {
+            self.research.remove(at: index)
+        }
+        self.research.append(associated)
     }
 }
 
@@ -46,5 +53,17 @@ extension ResearchGroup {
 extension Array where Element == ResearchGroup {
     subscript(_ research: Research) -> ResearchGroup? {
         return self.first(where: { $0.research.map({ $0.name.lowercased() }).contains(research.name.lowercased()) })
+    }
+    
+    func sorted() -> [ResearchGroup] {
+        var sorted: [ResearchGroup] = []
+        if let storage = self.first(where: { $0.id == "Storage" }) { sorted.append(storage) }
+        if let decoration = self.first(where: { $0.id == "Decoration" }) { sorted.append(decoration) }
+        if let power = self.first(where: { $0.id == "Power" }) { sorted.append(power) }
+        if let farming = self.first(where: { $0.id == "Farming" }) { sorted.append(farming) }
+        if let processing = self.first(where: { $0.id == "Processing" }) { sorted.append(processing) }
+        if let base = self.first(where: { $0.id == "Base" }) { sorted.append(base) }
+        if let utilities = self.first(where: { $0.id == "Utilities" }) { sorted.append(utilities) }
+        return sorted
     }
 }

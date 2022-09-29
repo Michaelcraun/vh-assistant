@@ -42,6 +42,16 @@
 		9B1CA88D28E5AA9300D41D2A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88B28E5AA9300D41D2A /* Database.swift */; };
 		9B1CA89028E5B8D300D41D2A /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88F28E5B8D300D41D2A /* CharacterList.swift */; };
 		9B1CA89128E5B8D300D41D2A /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88F28E5B8D300D41D2A /* CharacterList.swift */; };
+		9B1CA89328E5D00500D41D2A /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA89228E5D00500D41D2A /* CharacterView.swift */; };
+		9B1CA89428E5D00500D41D2A /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA89228E5D00500D41D2A /* CharacterView.swift */; };
+		9B1CA89728E5D3B500D41D2A /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA89628E5D3B500D41D2A /* CircleButton.swift */; };
+		9B1CA89828E5D3B500D41D2A /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA89628E5D3B500D41D2A /* CircleButton.swift */; };
+		9B1CA89A28E5D48C00D41D2A /* RaisedPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA89928E5D48C00D41D2A /* RaisedPanel.swift */; };
+		9B1CA89B28E5D48C00D41D2A /* RaisedPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA89928E5D48C00D41D2A /* RaisedPanel.swift */; };
+		9B1CA89E28E5D81000D41D2A /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA89D28E5D81000D41D2A /* ImageExtension.swift */; };
+		9B1CA89F28E5D81100D41D2A /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA89D28E5D81000D41D2A /* ImageExtension.swift */; };
+		9B1CA8A128E5D8C300D41D2A /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA8A028E5D8C300D41D2A /* UIImage+Gif.swift */; };
+		9B1CA8A228E5D8C300D41D2A /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA8A028E5D8C300D41D2A /* UIImage+Gif.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +110,11 @@
 		9B1CA88828E5A84100D41D2A /* VaultCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultCharacter.swift; sourceTree = "<group>"; };
 		9B1CA88B28E5AA9300D41D2A /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		9B1CA88F28E5B8D300D41D2A /* CharacterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterList.swift; sourceTree = "<group>"; };
+		9B1CA89228E5D00500D41D2A /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		9B1CA89628E5D3B500D41D2A /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		9B1CA89928E5D48C00D41D2A /* RaisedPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaisedPanel.swift; sourceTree = "<group>"; };
+		9B1CA89D28E5D81000D41D2A /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		9B1CA8A028E5D8C300D41D2A /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +163,8 @@
 		9B1CA81A28E4F17500D41D2A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9B1CA89C28E5D7FD00D41D2A /* Extension */,
+				9B1CA89528E5D3A900D41D2A /* Component */,
 				9B1CA88E28E5B8C400D41D2A /* View */,
 				9B1CA86F28E5160800D41D2A /* Data */,
 				9B1CA85A28E4F1A300D41D2A /* Model */,
@@ -226,8 +243,27 @@
 			isa = PBXGroup;
 			children = (
 				9B1CA88F28E5B8D300D41D2A /* CharacterList.swift */,
+				9B1CA89228E5D00500D41D2A /* CharacterView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9B1CA89528E5D3A900D41D2A /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				9B1CA89628E5D3B500D41D2A /* CircleButton.swift */,
+				9B1CA89928E5D48C00D41D2A /* RaisedPanel.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		9B1CA89C28E5D7FD00D41D2A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9B1CA89D28E5D81000D41D2A /* ImageExtension.swift */,
+				9B1CA8A028E5D8C300D41D2A /* UIImage+Gif.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,9 +460,14 @@
 			files = (
 				9B1CA85C28E4F1B400D41D2A /* ResearchGroup.swift in Sources */,
 				9B1CA84528E4F17600D41D2A /* ContentView.swift in Sources */,
+				9B1CA89328E5D00500D41D2A /* CharacterView.swift in Sources */,
+				9B1CA8A128E5D8C300D41D2A /* UIImage+Gif.swift in Sources */,
+				9B1CA89E28E5D81000D41D2A /* ImageExtension.swift in Sources */,
+				9B1CA89728E5D3B500D41D2A /* CircleButton.swift in Sources */,
 				9B1CA84328E4F17600D41D2A /* VH_AssistantApp.swift in Sources */,
 				9B1CA85E28E4F1B900D41D2A /* Research.swift in Sources */,
 				9B1CA88628E5210A00D41D2A /* Talent.swift in Sources */,
+				9B1CA89A28E5D48C00D41D2A /* RaisedPanel.swift in Sources */,
 				9B1CA88328E51BAB00D41D2A /* Ability.swift in Sources */,
 				9B1CA88C28E5AA9300D41D2A /* Database.swift in Sources */,
 				9B1CA89028E5B8D300D41D2A /* CharacterList.swift in Sources */,
@@ -439,13 +480,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1CA89B28E5D48C00D41D2A /* RaisedPanel.swift in Sources */,
 				9B1CA88D28E5AA9300D41D2A /* Database.swift in Sources */,
 				9B1CA89128E5B8D300D41D2A /* CharacterList.swift in Sources */,
 				9B1CA84628E4F17600D41D2A /* ContentView.swift in Sources */,
+				9B1CA89828E5D3B500D41D2A /* CircleButton.swift in Sources */,
 				9B1CA88428E51BAB00D41D2A /* Ability.swift in Sources */,
+				9B1CA8A228E5D8C300D41D2A /* UIImage+Gif.swift in Sources */,
 				9B1CA88A28E5A84100D41D2A /* VaultCharacter.swift in Sources */,
 				9B1CA84428E4F17600D41D2A /* VH_AssistantApp.swift in Sources */,
 				9B1CA88728E5210A00D41D2A /* Talent.swift in Sources */,
+				9B1CA89F28E5D81100D41D2A /* ImageExtension.swift in Sources */,
+				9B1CA89428E5D00500D41D2A /* CharacterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

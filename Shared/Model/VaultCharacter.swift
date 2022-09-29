@@ -7,12 +7,12 @@
 
 import Foundation
 
-class VaultCharacter: Identifiable {
+class VaultCharacter: Identifiable, ObservableObject {
     var id: String
     var name: String
     
-    var knowledgePoints: Int = 0
-    var skillPoints: Int = 5
+    @Published var knowledgePoints: Int = 0
+    @Published var skillPoints: Int = 5
     
     var abilities: [Ability] = []
     var researches: [Research] = []
