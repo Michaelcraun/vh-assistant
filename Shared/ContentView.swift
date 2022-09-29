@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var database: Database = Database()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            CharacterList(database: database)
+        }
+    }
+    
+    init() {
+        // Do any temporary testing setup here
     }
 }
 

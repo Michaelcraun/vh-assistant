@@ -17,6 +17,31 @@
 		9B1CA84628E4F17600D41D2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA81C28E4F17500D41D2A /* ContentView.swift */; };
 		9B1CA84728E4F17600D41D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA81D28E4F17600D41D2A /* Assets.xcassets */; };
 		9B1CA84828E4F17600D41D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA81D28E4F17600D41D2A /* Assets.xcassets */; };
+		9B1CA85928E4F19600D41D2A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA85828E4F19600D41D2A /* Parser.swift */; };
+		9B1CA85C28E4F1B400D41D2A /* ResearchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA85B28E4F1B400D41D2A /* ResearchGroup.swift */; };
+		9B1CA85E28E4F1B900D41D2A /* Research.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA85D28E4F1B900D41D2A /* Research.swift */; };
+		9B1CA87628E5160800D41D2A /* researches_groups.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87028E5160800D41D2A /* researches_groups.json */; };
+		9B1CA87728E5160800D41D2A /* researches_groups.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87028E5160800D41D2A /* researches_groups.json */; };
+		9B1CA87828E5160800D41D2A /* skill_descriptions.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87128E5160800D41D2A /* skill_descriptions.json */; };
+		9B1CA87928E5160800D41D2A /* skill_descriptions.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87128E5160800D41D2A /* skill_descriptions.json */; };
+		9B1CA87A28E5160800D41D2A /* skill_gates.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87228E5160800D41D2A /* skill_gates.json */; };
+		9B1CA87B28E5160800D41D2A /* skill_gates.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87228E5160800D41D2A /* skill_gates.json */; };
+		9B1CA87C28E5160800D41D2A /* talents.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87328E5160800D41D2A /* talents.json */; };
+		9B1CA87D28E5160800D41D2A /* talents.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87328E5160800D41D2A /* talents.json */; };
+		9B1CA87E28E5160800D41D2A /* researches.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87428E5160800D41D2A /* researches.json */; };
+		9B1CA87F28E5160800D41D2A /* researches.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87428E5160800D41D2A /* researches.json */; };
+		9B1CA88028E5160800D41D2A /* abilities.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87528E5160800D41D2A /* abilities.json */; };
+		9B1CA88128E5160800D41D2A /* abilities.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1CA87528E5160800D41D2A /* abilities.json */; };
+		9B1CA88328E51BAB00D41D2A /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88228E51BAB00D41D2A /* Ability.swift */; };
+		9B1CA88428E51BAB00D41D2A /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88228E51BAB00D41D2A /* Ability.swift */; };
+		9B1CA88628E5210A00D41D2A /* Talent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88528E5210A00D41D2A /* Talent.swift */; };
+		9B1CA88728E5210A00D41D2A /* Talent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88528E5210A00D41D2A /* Talent.swift */; };
+		9B1CA88928E5A84100D41D2A /* VaultCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88828E5A84100D41D2A /* VaultCharacter.swift */; };
+		9B1CA88A28E5A84100D41D2A /* VaultCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88828E5A84100D41D2A /* VaultCharacter.swift */; };
+		9B1CA88C28E5AA9300D41D2A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88B28E5AA9300D41D2A /* Database.swift */; };
+		9B1CA88D28E5AA9300D41D2A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88B28E5AA9300D41D2A /* Database.swift */; };
+		9B1CA89028E5B8D300D41D2A /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88F28E5B8D300D41D2A /* CharacterList.swift */; };
+		9B1CA89128E5B8D300D41D2A /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA88F28E5B8D300D41D2A /* CharacterList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +61,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9B1CA86028E5030400D41D2A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = vh_json;
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9B1CA81B28E4F17500D41D2A /* VH_AssistantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VH_AssistantApp.swift; sourceTree = "<group>"; };
 		9B1CA81C28E4F17500D41D2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +86,20 @@
 		9B1CA83B28E4F17600D41D2A /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B1CA83F28E4F17600D41D2A /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		9B1CA84128E4F17600D41D2A /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		9B1CA85828E4F19600D41D2A /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		9B1CA85B28E4F1B400D41D2A /* ResearchGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchGroup.swift; sourceTree = "<group>"; };
+		9B1CA85D28E4F1B900D41D2A /* Research.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Research.swift; sourceTree = "<group>"; };
+		9B1CA87028E5160800D41D2A /* researches_groups.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = researches_groups.json; sourceTree = "<group>"; };
+		9B1CA87128E5160800D41D2A /* skill_descriptions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skill_descriptions.json; sourceTree = "<group>"; };
+		9B1CA87228E5160800D41D2A /* skill_gates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skill_gates.json; sourceTree = "<group>"; };
+		9B1CA87328E5160800D41D2A /* talents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = talents.json; sourceTree = "<group>"; };
+		9B1CA87428E5160800D41D2A /* researches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = researches.json; sourceTree = "<group>"; };
+		9B1CA87528E5160800D41D2A /* abilities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = abilities.json; sourceTree = "<group>"; };
+		9B1CA88228E51BAB00D41D2A /* Ability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
+		9B1CA88528E5210A00D41D2A /* Talent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talent.swift; sourceTree = "<group>"; };
+		9B1CA88828E5A84100D41D2A /* VaultCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultCharacter.swift; sourceTree = "<group>"; };
+		9B1CA88B28E5AA9300D41D2A /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		9B1CA88F28E5B8D300D41D2A /* CharacterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +148,9 @@
 		9B1CA81A28E4F17500D41D2A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9B1CA88E28E5B8C400D41D2A /* View */,
+				9B1CA86F28E5160800D41D2A /* Data */,
+				9B1CA85A28E4F1A300D41D2A /* Model */,
 				9B1CA81B28E4F17500D41D2A /* VH_AssistantApp.swift */,
 				9B1CA81C28E4F17500D41D2A /* ContentView.swift */,
 				9B1CA81D28E4F17600D41D2A /* Assets.xcassets */,
@@ -141,6 +195,41 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		9B1CA85A28E4F1A300D41D2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B1CA88228E51BAB00D41D2A /* Ability.swift */,
+				9B1CA88828E5A84100D41D2A /* VaultCharacter.swift */,
+				9B1CA88B28E5AA9300D41D2A /* Database.swift */,
+				9B1CA85828E4F19600D41D2A /* Parser.swift */,
+				9B1CA85D28E4F1B900D41D2A /* Research.swift */,
+				9B1CA85B28E4F1B400D41D2A /* ResearchGroup.swift */,
+				9B1CA88528E5210A00D41D2A /* Talent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9B1CA86F28E5160800D41D2A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9B1CA87028E5160800D41D2A /* researches_groups.json */,
+				9B1CA87128E5160800D41D2A /* skill_descriptions.json */,
+				9B1CA87228E5160800D41D2A /* skill_gates.json */,
+				9B1CA87328E5160800D41D2A /* talents.json */,
+				9B1CA87428E5160800D41D2A /* researches.json */,
+				9B1CA87528E5160800D41D2A /* abilities.json */,
+			);
+			path = Data;
+			sourceTree = SOURCE_ROOT;
+		};
+		9B1CA88E28E5B8C400D41D2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B1CA88F28E5B8D300D41D2A /* CharacterList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,6 +237,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B1CA84B28E4F17600D41D2A /* Build configuration list for PBXNativeTarget "VH Assistant (iOS)" */;
 			buildPhases = (
+				9B1CA85F28E5021400D41D2A /* ShellScript */,
+				9B1CA86028E5030400D41D2A /* CopyFiles */,
 				9B1CA81E28E4F17600D41D2A /* Sources */,
 				9B1CA81F28E4F17600D41D2A /* Frameworks */,
 				9B1CA82028E4F17600D41D2A /* Resources */,
@@ -266,7 +357,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1CA87628E5160800D41D2A /* researches_groups.json in Resources */,
+				9B1CA87C28E5160800D41D2A /* talents.json in Resources */,
 				9B1CA84728E4F17600D41D2A /* Assets.xcassets in Resources */,
+				9B1CA88028E5160800D41D2A /* abilities.json in Resources */,
+				9B1CA87A28E5160800D41D2A /* skill_gates.json in Resources */,
+				9B1CA87E28E5160800D41D2A /* researches.json in Resources */,
+				9B1CA87828E5160800D41D2A /* skill_descriptions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +371,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1CA87728E5160800D41D2A /* researches_groups.json in Resources */,
+				9B1CA87D28E5160800D41D2A /* talents.json in Resources */,
 				9B1CA84828E4F17600D41D2A /* Assets.xcassets in Resources */,
+				9B1CA88128E5160800D41D2A /* abilities.json in Resources */,
+				9B1CA87B28E5160800D41D2A /* skill_gates.json in Resources */,
+				9B1CA87F28E5160800D41D2A /* researches.json in Resources */,
+				9B1CA87928E5160800D41D2A /* skill_descriptions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,13 +397,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9B1CA85F28E5021400D41D2A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# ${PROJECT_DIR}/copy_vh_files.sh\n\n# Copy files to project as assets\nDATA=\"${SRCROOT}/Data\"\nAPP=\"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}/Data\"\ncp -f \"$DATA\" \"$APP\"\n\nexit 0\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9B1CA81E28E4F17600D41D2A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1CA85C28E4F1B400D41D2A /* ResearchGroup.swift in Sources */,
 				9B1CA84528E4F17600D41D2A /* ContentView.swift in Sources */,
 				9B1CA84328E4F17600D41D2A /* VH_AssistantApp.swift in Sources */,
+				9B1CA85E28E4F1B900D41D2A /* Research.swift in Sources */,
+				9B1CA88628E5210A00D41D2A /* Talent.swift in Sources */,
+				9B1CA88328E51BAB00D41D2A /* Ability.swift in Sources */,
+				9B1CA88C28E5AA9300D41D2A /* Database.swift in Sources */,
+				9B1CA89028E5B8D300D41D2A /* CharacterList.swift in Sources */,
+				9B1CA85928E4F19600D41D2A /* Parser.swift in Sources */,
+				9B1CA88928E5A84100D41D2A /* VaultCharacter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +439,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1CA88D28E5AA9300D41D2A /* Database.swift in Sources */,
+				9B1CA89128E5B8D300D41D2A /* CharacterList.swift in Sources */,
 				9B1CA84628E4F17600D41D2A /* ContentView.swift in Sources */,
+				9B1CA88428E51BAB00D41D2A /* Ability.swift in Sources */,
+				9B1CA88A28E5A84100D41D2A /* VaultCharacter.swift in Sources */,
 				9B1CA84428E4F17600D41D2A /* VH_AssistantApp.swift in Sources */,
+				9B1CA88728E5210A00D41D2A /* Talent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
