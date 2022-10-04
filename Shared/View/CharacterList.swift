@@ -27,21 +27,31 @@ struct CharacterList: View {
             ScrollView {
                 LazyVStack {
                     ForEach(database.characters) { character in
-                        RaisedPanel {
-                            Text(character.name)
-                            Spacer()
-                            VStack {
-                                HStack {
-                                    Text("Knowledge:")
-                                    Text("\(character.knowledgePoints)")
-                                }
-                                HStack {
-                                    Text("Skill:")
-                                    Text("\(character.skillPoints)")
+                        NavigationLink(destination: CharacterView(character: character, database: database)) {
+                            RaisedPanel {
+                                Text(character.name)
+                                Spacer()
+                                VStack(spacing: 2) {
+                                    HStack {
+                                        Image(gif: "knowledge")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 16, height: 16)
+                                        Text("\(character.knowledgePoints)")
+                                            .font(.caption)
+                                    }
+                                    HStack {
+                                        Image(gif: "skill")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 16, height: 16)
+                                        Text("\(character.skillPoints)")
+                                            .font(.caption)
+                                    }
                                 }
                             }
-                            .font(.caption)
                         }
+                        .foregroundColor(Color.black)
                     }
                 }
                 .padding(2)
@@ -55,24 +65,41 @@ struct CharacterList: View {
             Button("Cancel", role: .cancel, action: {})
             Button("Add", action: {
                 if !newPlaythroughName.isEmpty {
-                    database.load(character: VaultCharacter(name: newPlaythroughName))
+                    database.load(
+                        character: VaultCharacter(
+                            name: newPlaythroughName,
+                            with: database.researchGroups
+                        )
+                    )
                 }
                 
                 #if DEBUG
-                database.new(character: VaultCharacter(name: "Test"))
+                database.new(
+                    character: VaultCharacter(
+                        name: "Test",
+                        with: database.researchGroups
+                    )
+                )
                 #endif
             })
         }, message: {
             Text("Message")
         })
-        .padding(8)
-        .background(Color.gray.opacity(0.1))
         .navigationTitle("Playthroughs")
     }
 }
 
 struct CharacterList_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterList(database: Database())
+        CharacterList(
+            database: Database(
+                with: [
+                    VaultCharacter(
+                        name: "Test",
+                        with: Database().researchGroups
+                    )
+                ]
+            )
+        )
     }
 }

@@ -20,7 +20,7 @@ class Parser {
                 dict["name"] = ability["name"]
                 
                 guard let levels = ability["levelConfiguration"] as? [[String : Any]] else {
-                    print("Cannot parse ability for \(ability)")
+                    print("TAG: Cannot parse ability for \(ability)")
                     continue
                 }
                 
@@ -50,16 +50,39 @@ class Parser {
         guard let url = Bundle.main.url(forResource: "researches", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let json = try? JSONSerialization.jsonObject(with: data) as? [String : Any] else {
-            print("Unable to serialize researches_groups.json")
+            print("TAG: Unable to serialize researches_groups.json")
             return []
         }
         
-        guard let researches = json["MOD_RESEARCHES"] as? [[String : Any]] else {
-            print("Research groups does not contain MOD_RESEARCHES")
+        var researches: [Research] = []
+        
+        guard let modResearches = json["MOD_RESEARCHES"] as? [[String : Any]] else {
+            print("TAG: Research groups does not contain MOD_RESEARCHES")
             return []
         }
         
-        return researches.map({ Research(from: $0) })
+        for data in modResearches {
+            guard let research = Research(from: data) else {
+                print("TAG: Could not initialize Research from \(data)")
+                continue
+            }
+            researches.append(research)
+        }
+        
+        guard let customResearches = json["CUSTOM_RESEARCHES"] as? [[String : Any]] else {
+            print("TAG: Research groups does not contain MOD_RESEARCHES")
+            return []
+        }
+        
+        for data in customResearches {
+            guard let research = Research(from: data) else {
+                print("TAG: Could not initialize Research from \(data)")
+                continue
+            }
+            researches.append(research)
+        }
+        
+        return researches
     }
     
     func parseResearchGroups() -> [ResearchGroup] {
@@ -68,22 +91,27 @@ class Parser {
         guard let url = Bundle.main.url(forResource: "researches_groups", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let json = try? JSONSerialization.jsonObject(with: data) as? [String : Any] else {
-            print("Unable to serialize researches_groups.json")
+            print("TAG: Unable to serialize researches_groups.json")
             return []
         }
         
         guard let groups = json["groups"] as? [String : Any] else {
-            print("Research groups does not contain groups")
+            print("TAG: Research groups does not contain groups")
             return []
         }
         
         for key in groups.keys {
             guard let data = groups[key] as? [String : Any] else {
-                print("Cannot parse group data")
+                print("TAG: Cannot parse group data")
                 continue
             }
             
-            researchGroups.append(ResearchGroup(from: data, with: key))
+            guard let group = ResearchGroup(from: data, with: key) else {
+                print("TAG: Failed to initialize ResearchGroup with key [\(key)] and \(data)")
+                continue
+            }
+            
+            researchGroups.append(group)
         }
         
         return researchGroups

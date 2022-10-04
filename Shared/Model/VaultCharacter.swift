@@ -15,12 +15,13 @@ class VaultCharacter: Identifiable, ObservableObject {
     @Published var skillPoints: Int = 5
     
     var abilities: [Ability] = []
-    var researches: [Research] = []
+    @Published var researches: [ResearchGroup] = []
     var talents: [Talent] = []
     
-    init(name: String) {
+    init(name: String, with researchGroups: [ResearchGroup]) {
         self.id = UUID().uuidString
         self.name = name
+        self.researches = researchGroups
     }
     
     init(from dict: [String : Any]) {
@@ -31,10 +32,10 @@ class VaultCharacter: Identifiable, ObservableObject {
         self.skillPoints = dict["skill"] as? Int ?? 0
         
         if let researches = dict["research"] as? [[String : Any]] {
-            self.researches = researches.map({ Research(from: $0) })
+            self.researches = researches.compactMap({ ResearchGroup(from: $0) })
         }
     }
-    
+        
     func dict() -> [String : Any] {
         return [
             "id" : self.id,
@@ -54,18 +55,48 @@ class VaultCharacter: Identifiable, ObservableObject {
     }
     
     func canPurchase(research: Research) -> Bool {
-        return knowledgePoints >= research.current
+        guard let group = researches[research],
+              let research = group.research.first(where: { $0.id == research.id }) else { return false }
+        return research.purchased ? false : knowledgePoints >= research.current
     }
     
     func purchase(ability: Ability) {
         
     }
     
-    func purchase(researh: Research) {
+    func purchase(research: Research) {
+        guard let group = researches[research],
+              let research = group.research.first(where: { $0.id == research.id }) else {
+            print("TAG: Could not find research in character's resarches")
+            return
+        }
+                
+        research.purchased = true
+        knowledgePoints -= research.current
         
+        for researchGroup in researches {
+            researchGroup.increaseForPurchasedResearchIn(group: group)
+        }
     }
     
-    func purchase(research: Research) {
+    func purchase(talent: Talent) {
         
+    }
+}
+
+extension VaultCharacter: Equatable {
+    static func == (lhs: VaultCharacter, rhs: VaultCharacter) -> Bool {
+        return lhs.name == rhs.name
+//        && lhs.abilities == rhs.abilities
+        && lhs.researches == rhs.researches
+//        && lhs.talents == rhs.talents
+        && lhs.knowledgePoints == rhs.knowledgePoints
+        && lhs.skillPoints == rhs.skillPoints
+    }
+}
+
+extension VaultCharacter: CustomStringConvertible {
+    var description: String {
+        return "VaultCharacter { id=\(id), name=\(name), knowledgePoints=\(knowledgePoints), skillPoints=\(skillPoints), abilities=, researches=\(researches.map({ $0.description }).joined(separator: ",\n")) }"
     }
 }

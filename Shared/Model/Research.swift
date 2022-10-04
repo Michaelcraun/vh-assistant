@@ -10,10 +10,17 @@ import Foundation
 class Research: Identifiable {
     var id: String
     var base: Int
-    var modIds: [String]
     var name: String
     
+    /// Optional, if not present, this is a custom research
+    var modIds: [String]
+    
     var current: Int
+    var purchased: Bool = false
+    
+    var isCustom: Bool {
+        return modIds.isEmpty
+    }
     
     init(name: String) {
         self.id = name
@@ -24,13 +31,17 @@ class Research: Identifiable {
         self.current = 0
     }
     
-    init(from dict: [String : Any]) {
-        self.id = dict["name"] as? String ?? "ERROR"
-        self.base = dict["cost"] as? Int ?? 0
-        self.modIds = dict["modIds"] as? [String] ?? []
-        self.name = dict["name"] as? String ?? "ERROR"
+    init?(from dict: [String : Any]) {
+        guard let name = dict["name"] as? String,
+              let cost = dict["cost"] as? Int else { return nil }
         
-        self.current = dict["cost"] as? Int ?? 0
+        self.id = name
+        self.base = cost
+        self.name = name
+        
+        self.modIds = dict["modIds"] as? [String] ?? []
+        
+        self.current = cost
     }
     
     func dict() -> [String : Any] {
@@ -43,6 +54,21 @@ class Research: Identifiable {
     }
 }
 
+extension Research: Equatable {
+    static func == (lhs: Research, rhs: Research) -> Bool {
+        return lhs.current == rhs.current
+        && lhs.purchased == rhs.purchased
+    }
+}
+
+extension Research: CustomStringConvertible {
+    var description: String {
+        return "Research { name=\(name), base=\(base), modIds=\(modIds), current=\(current), purchased=\(purchased), isCustom=\(isCustom) }"
+    }
+}
+
 extension Array where Element == Research {
-    
+    func clamped(to group: ResearchGroup) -> [Research] {
+        return self.filter({ group.research.map({ $0.id }).contains($0.id) })
+    }
 }

@@ -20,8 +20,15 @@ struct CharacterView: View {
                 VStack(spacing: 12) {
                     Image(gif: "knowledge")
                         .frame(width: 30, height: 30)
-                    CircleButton(image: Image(systemName: "chevron.up")) {
-                        character.knowledgePoints += 1
+                    HStack {
+                        CircleButton(image: Image(systemName: "chevron.down")) {
+                            character.knowledgePoints -= 1
+                        }
+                        .disabled(character.knowledgePoints == 0)
+                        
+                        CircleButton(image: Image(systemName: "chevron.up")) {
+                            character.knowledgePoints += 1
+                        }
                     }
                     Text("\(character.knowledgePoints)")
                 }
@@ -32,8 +39,15 @@ struct CharacterView: View {
                 VStack(spacing: 12) {
                     Image(gif: "skill")
                         .frame(width: 30, height: 30)
-                    CircleButton(image: Image(systemName: "chevron.up")) {
-                        character.skillPoints += 1
+                    HStack {
+                        CircleButton(image: Image(systemName: "chevron.down")) {
+                            character.skillPoints -= 1
+                        }
+                        .disabled(character.skillPoints == 5)
+                        
+                        CircleButton(image: Image(systemName: "chevron.up")) {
+                            character.skillPoints += 1
+                        }
                     }
                     Text("\(character.skillPoints)")
                 }
@@ -42,38 +56,59 @@ struct CharacterView: View {
             }
             
             ScrollView {
-                ForEach(database.researchGroups.sorted()) { group in
+                ForEach(character.researches.sorted()) { group in
                     RaisedPanel {
                         VStack {
                             HStack(alignment: .center) {
                                 Text(group.title)
                                     .font(.title)
                                 Spacer()
-                                #warning("TODO: Need to put actual modifier here...")
-                                Text("+1")
+                                Text("\(group.modifier >= 1 ? "+\(group.modifier)" : "\(group.modifier)")")
                             }
                             
                             ForEach(group.research) { research in
                                 HStack {
-                                    Image(systemName: "xmark")
-                                    Text("\(research.name) (\(research.current))")
+                                    HStack {
+                                        Image(research.name)
+                                        Text("\(research.name) (\(research.current))")
+                                    }
+                                    .onTapGesture {
+                                        #warning("TODO: Display info about research")
+                                    }
+                                    
                                     Spacer()
+                                    
+                                    CircleButton(image: Image(systemName: "checkmark")) {
+                                        character.purchase(research: research)
+                                    }
+                                    .disabled(!character.canPurchase(research: research))
+                                    .foregroundColor(research.purchased ? .green : character.canPurchase(research: research) ? .blue : .gray)
                                 }
                                 .padding(8)
                             }
                         }
                     }
+                    .padding(.top, 4)
                 }
             }
             
             Spacer()
         }
         .navigationTitle(character.name)
+        .onChange(of: character) { character in
+            print(character.description)
+        }
     }
 }
 
 struct CharacterView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterView(character: VaultCharacter(name: "A Whole New World"), database: Database())
+        CharacterView(
+            character: VaultCharacter(
+                name: "A Whole New World",
+                with: Database().researchGroups
+            ),
+            database: Database()
+        )
     }
 }

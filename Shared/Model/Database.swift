@@ -24,6 +24,11 @@ class Database: ObservableObject {
         fetchCharacters()
     }
     
+    convenience init(with characters: [VaultCharacter]) {
+        self.init()
+        self.characters = characters
+    }
+    
     func associateResarch() {
         for group in researchGroups {
             for research in researches {
@@ -40,13 +45,15 @@ class Database: ObservableObject {
             let resourceKeys : [URLResourceKey] = [.creationDateKey, .isDirectoryKey]
             if let enumerator = FileManager.default.enumerator(at: path, includingPropertiesForKeys: resourceKeys) {
                 for case let fileUrl as URL in enumerator {
-                    do {
-                        let data = try Data(contentsOf: fileUrl)
-                        if let json = try JSONSerialization.jsonObject(with: data) as? [String : Any] {
-                            self.characters.append(VaultCharacter(from: json))
+                    if !fileUrl.absoluteString.contains("DS_Store") {
+                        do {
+                            let data = try Data(contentsOf: fileUrl)
+                            if let json = try JSONSerialization.jsonObject(with: data) as? [String : Any] {
+                                self.characters.append(VaultCharacter(from: json))
+                            }
+                        } catch {
+                            print("TAG:", error.localizedDescription)
                         }
-                    } catch {
-                        print("DATA:", error.localizedDescription)
                     }
                 }
             }
@@ -64,6 +71,7 @@ class Database: ObservableObject {
         save()
         reset()
         
+        character.researches = researchGroups
         characters.append(character)
         currentCharacter = character
         save()
@@ -75,6 +83,8 @@ class Database: ObservableObject {
 //        self.characters = parser.parseCharacters()
         self.researchGroups = parser.parseResearchGroups()
         self.researches = parser.parseResearches()
+        
+        self.associateResarch()
     }
     
     func save() {
@@ -84,7 +94,7 @@ class Database: ObservableObject {
                 do {
                     try FileManager.default.createDirectory(at: charPath, withIntermediateDirectories: true)
                 } catch {
-                    print("DATA:", error.localizedDescription)
+                    print("TAG:", error.localizedDescription)
                 }
             }
             
@@ -99,7 +109,7 @@ class Database: ObservableObject {
                     
                     try text?.write(to: fileUrl, atomically: true, encoding: .utf8)
                 } catch {
-                    print("DATA: ", error.localizedDescription)
+                    print("TAG: ", error.localizedDescription)
                 }
             }
         }
