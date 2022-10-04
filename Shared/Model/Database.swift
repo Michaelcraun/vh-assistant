@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 class Database: ObservableObject {
+    private let parser = Parser()
+    
     var abilities: [Ability] = []
     var researchGroups: [ResearchGroup] = []
     var researches: [Research] = []
@@ -19,14 +21,20 @@ class Database: ObservableObject {
     
     init() {
         reset()
-        
-        associateResarch()
         fetchCharacters()
     }
     
     convenience init(with characters: [VaultCharacter]) {
         self.init()
         self.characters = characters
+    }
+    
+    func associateDescriptions() {
+        let descriptions = parser.parseDescriptions()
+        
+        for research in researches {
+            research.text = descriptions[research.name] ?? "ERROR"
+        }
     }
     
     func associateResarch() {
@@ -78,12 +86,12 @@ class Database: ObservableObject {
     }
     
     func reset() {
-        let parser = Parser()
-        
-//        self.characters = parser.parseCharacters()
+//        self.abilities = parser.parseAbilities()
         self.researchGroups = parser.parseResearchGroups()
         self.researches = parser.parseResearches()
+//        self.talents = parser.parseTalents()
         
+        self.associateDescriptions()
         self.associateResarch()
     }
     

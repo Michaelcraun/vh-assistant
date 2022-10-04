@@ -27,13 +27,13 @@ struct CharacterList: View {
             ScrollView {
                 LazyVStack {
                     ForEach(database.characters) { character in
-                        NavigationLink(destination: CharacterView(character: character, database: database)) {
+                        NavigationLink(destination: CharacterResearchView(character: character, database: database)) {
                             RaisedPanel {
                                 Text(character.name)
                                 Spacer()
                                 VStack(spacing: 2) {
                                     HStack {
-                                        Image(gif: "knowledge")
+                                        Image("knowledge")
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 16, height: 16)
@@ -41,7 +41,7 @@ struct CharacterList: View {
                                             .font(.caption)
                                     }
                                     HStack {
-                                        Image(gif: "skill")
+                                        Image("skill")
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 16, height: 16)

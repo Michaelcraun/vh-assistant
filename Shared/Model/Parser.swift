@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftPath
 
 class Parser {
     func parseAbilities() {
@@ -44,6 +45,35 @@ class Parser {
         }
         
         print(dicts)
+    }
+    
+    func parseDescriptions() -> [String : String] {
+        guard let url = Bundle.main.url(forResource: "skill_descriptions", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let json = try? JSONSerialization.jsonObject(with: data) as? JsonObject,
+              let path = SwiftPath("$.descriptions"),
+              let jsonDescriptions = try? path.evaluate(with: json) as? JsonObject,
+              let textPath = SwiftPath("$.text") else {
+            print("TAG: Unable to serialize researches_groups.json")
+            return [ : ]
+        }
+        
+        var descriptions: [String : String] = [ : ]
+        
+        for key in jsonDescriptions.keys {
+            if let json = jsonDescriptions[key] as? [JsonObject],
+                let text = try? textPath.evaluate(with: json) as? [String] {
+                descriptions[key] = text.joined(separator: "")
+            } else if let json = jsonDescriptions[key] as? JsonObject,
+                      let text = try? textPath.evaluate(with: json) as? String {
+                descriptions[key] = text
+            } else {
+                print("TAG: Could not find text for \(key)")
+            }
+        }
+        
+        print("TAG: Found descriptions: \(descriptions)")
+        return descriptions
     }
     
     func parseResearches() -> [Research] {

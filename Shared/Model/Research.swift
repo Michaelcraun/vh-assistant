@@ -17,6 +17,7 @@ class Research: Identifiable {
     
     var current: Int
     var purchased: Bool = false
+    var text: String = ""
     
     var isCustom: Bool {
         return modIds.isEmpty
