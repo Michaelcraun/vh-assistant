@@ -9,10 +9,12 @@ import Foundation
 import SwiftPath
 
 class Parser {
-    func parseAbilities() {
+    private let shouldLoadFromDevice: Bool = false
+    
+    func parseAbilities(from json: JsonObject) -> [Ability]? {
         guard let url = Bundle.main.url(forResource: "abilities", withExtension: "json"),
               let data = try? Data(contentsOf: url),
-              let json = try? JSONSerialization.jsonObject(with: data) as? [String : Any] else { fatalError() }
+              let json = try? JSONSerialization.jsonObject(with: data) as? [String : Any] else { return nil }
         
         var dicts: [[String : Any]] = []
         for key in json.keys {
@@ -44,18 +46,17 @@ class Parser {
             }
         }
         
-        print(dicts)
+        return nil
     }
     
-    func parseDescriptions() -> [String : String] {
+    func parseDescriptions(from json: JsonObject) -> [String : String]? {
         guard let url = Bundle.main.url(forResource: "skill_descriptions", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let json = try? JSONSerialization.jsonObject(with: data) as? JsonObject,
               let path = SwiftPath("$.descriptions"),
               let jsonDescriptions = try? path.evaluate(with: json) as? JsonObject,
               let textPath = SwiftPath("$.text") else {
-            print("TAG: Unable to serialize researches_groups.json")
-            return [ : ]
+            return nil
         }
         
         var descriptions: [String : String] = [ : ]
@@ -68,45 +69,34 @@ class Parser {
                       let text = try? textPath.evaluate(with: json) as? String {
                 descriptions[key] = text
             } else {
-                print("TAG: Could not find text for \(key)")
+                FirebaseManager.report(error: "Could not find text for \(key)")
             }
         }
         
-        print("TAG: Found descriptions: \(descriptions)")
         return descriptions
     }
     
-    func parseResearches() -> [Research] {
-        guard let url = Bundle.main.url(forResource: "researches", withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let json = try? JSONSerialization.jsonObject(with: data) as? [String : Any] else {
-            print("TAG: Unable to serialize researches_groups.json")
-            return []
+    func parseResearches(from json: JsonObject) -> [Research]? {
+        guard let modPath = SwiftPath("$.MOD_RESEARCHES"),
+              let customPath = SwiftPath("$.CUSTOM_RESEARCHES"),
+              let modResearches = try? modPath.evaluate(with: json) as? [JsonObject],
+              let customResearches = try? customPath.evaluate(with: json) as? [JsonObject] else {
+            return nil
         }
         
         var researches: [Research] = []
         
-        guard let modResearches = json["MOD_RESEARCHES"] as? [[String : Any]] else {
-            print("TAG: Research groups does not contain MOD_RESEARCHES")
-            return []
-        }
-        
         for data in modResearches {
             guard let research = Research(from: data) else {
-                print("TAG: Could not initialize Research from \(data)")
+                FirebaseManager.report(error: "Could not initialize Research from \(data)")
                 continue
             }
             researches.append(research)
         }
         
-        guard let customResearches = json["CUSTOM_RESEARCHES"] as? [[String : Any]] else {
-            print("TAG: Research groups does not contain MOD_RESEARCHES")
-            return []
-        }
-        
         for data in customResearches {
             guard let research = Research(from: data) else {
-                print("TAG: Could not initialize Research from \(data)")
+                FirebaseManager.report(error: "Could not initialize Research from \(data)")
                 continue
             }
             researches.append(research)
@@ -115,29 +105,22 @@ class Parser {
         return researches
     }
     
-    func parseResearchGroups() -> [ResearchGroup] {
+    func parseResearchGroups(from json: JsonObject) -> [ResearchGroup]? {
+        guard let path = SwiftPath("$.groups"),
+              let groups = try? path.evaluate(with: json) as? JsonObject else {
+            return nil
+        }
+        
         var researchGroups: [ResearchGroup] = []
         
-        guard let url = Bundle.main.url(forResource: "researches_groups", withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let json = try? JSONSerialization.jsonObject(with: data) as? [String : Any] else {
-            print("TAG: Unable to serialize researches_groups.json")
-            return []
-        }
-        
-        guard let groups = json["groups"] as? [String : Any] else {
-            print("TAG: Research groups does not contain groups")
-            return []
-        }
-        
         for key in groups.keys {
-            guard let data = groups[key] as? [String : Any] else {
-                print("TAG: Cannot parse group data")
+            guard let data = groups[key] as? JsonObject else {
+                FirebaseManager.report(error: "Cannot parse group data")
                 continue
             }
             
             guard let group = ResearchGroup(from: data, with: key) else {
-                print("TAG: Failed to initialize ResearchGroup with key [\(key)] and \(data)")
+                FirebaseManager.report(error: "Failed to initialize ResearchGroup with key [\(key)] and \(data)")
                 continue
             }
             
@@ -147,7 +130,7 @@ class Parser {
         return researchGroups
     }
     
-    func parseTalents() {
-        
+    func parseTalents(from json: JsonObject) -> [Talent]? {
+        return nil
     }
 }

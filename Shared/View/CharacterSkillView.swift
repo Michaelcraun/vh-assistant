@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterSkillView: View {
     @StateObject var character: VaultCharacter
-    @ObservedObject var database: Database
+    @ObservedObject var database: FirebaseManager
     
     @State var isShowingDetail: Bool = false
     @State var title: String = ""
@@ -18,46 +18,8 @@ struct CharacterSkillView: View {
     var body: some View {
         ZStack {
             VStack {
-                RaisedPanel {
-                    Spacer()
-                    
-                    // Knowledge Points
-                    VStack(spacing: 12) {
-                        Image("knowledge")
-                            .frame(width: 30, height: 30)
-                        HStack {
-                            CircleButton(image: Image(systemName: "chevron.down")) {
-                                character.knowledgePoints -= 1
-                            }
-                            .disabled(character.knowledgePoints == 0)
-                            
-                            CircleButton(image: Image(systemName: "chevron.up")) {
-                                character.knowledgePoints += 1
-                            }
-                        }
-                        Text("\(character.knowledgePoints)")
-                    }
-                    
-                    Spacer()
-                    
-                    // Skill Points
-                    VStack(spacing: 12) {
-                        Image("skill")
-                            .frame(width: 30, height: 30)
-                        HStack {
-                            CircleButton(image: Image(systemName: "chevron.down")) {
-                                character.skillPoints -= 1
-                            }
-                            .disabled(character.skillPoints == 5)
-                            
-                            CircleButton(image: Image(systemName: "chevron.up")) {
-                                character.skillPoints += 1
-                            }
-                        }
-                        Text("\(character.skillPoints)")
-                    }
-                    
-                    Spacer()
+                CharacterStatView(character: character) {
+                    database.save(character: character)
                 }
                 
                 ScrollView {
@@ -73,9 +35,9 @@ struct CharacterSkillView_Previews: PreviewProvider {
         CharacterSkillView(
             character: VaultCharacter(
                 name: "A Whole New World",
-                with: Database().researchGroups
+                with: FirebaseManager().researchGroups
             ),
-            database: Database()
+            database: FirebaseManager()
         )
     }
 }

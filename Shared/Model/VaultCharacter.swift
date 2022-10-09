@@ -67,7 +67,7 @@ class VaultCharacter: Identifiable, ObservableObject {
     func purchase(research: Research) {
         guard let group = researches[research],
               let research = group.research.first(where: { $0.id == research.id }) else {
-            print("TAG: Could not find research in character's resarches")
+            FirebaseManager.report(error: "Could not find research in character's resarches")
             return
         }
                 
@@ -86,12 +86,7 @@ class VaultCharacter: Identifiable, ObservableObject {
 
 extension VaultCharacter: Equatable {
     static func == (lhs: VaultCharacter, rhs: VaultCharacter) -> Bool {
-        return lhs.name == rhs.name
-//        && lhs.abilities == rhs.abilities
-        && lhs.researches == rhs.researches
-//        && lhs.talents == rhs.talents
-        && lhs.knowledgePoints == rhs.knowledgePoints
-        && lhs.skillPoints == rhs.skillPoints
+        return lhs.id == rhs.id
     }
 }
 

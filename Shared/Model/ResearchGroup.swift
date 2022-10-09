@@ -26,7 +26,7 @@ class ResearchGroup: Identifiable {
             self.id = name ?? title
             self.title = title
         } else {
-            print("TAG: Could not initialize ResearchGroup from \(dict)")
+            FirebaseManager.report(error: "Could not initialize ResearchGroup from \(dict)")
             return nil
         }
         

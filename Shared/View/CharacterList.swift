@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CharacterList: View {
-    @ObservedObject var database: Database
+    @ObservedObject var database: FirebaseManager
     
     @State var isAddingPlaythrough: Bool = false
     @State var newPlaythroughName: String = ""
@@ -27,7 +27,7 @@ struct CharacterList: View {
             ScrollView {
                 LazyVStack {
                     ForEach(database.characters) { character in
-                        NavigationLink(destination: CharacterResearchView(character: character, database: database)) {
+                        NavigationLink(destination: CharacterTabView(character: character, database: database)) {
                             RaisedPanel {
                                 Text(character.name)
                                 Spacer()
@@ -92,11 +92,11 @@ struct CharacterList: View {
 struct CharacterList_Previews: PreviewProvider {
     static var previews: some View {
         CharacterList(
-            database: Database(
+            database: FirebaseManager(
                 with: [
                     VaultCharacter(
                         name: "Test",
-                        with: Database().researchGroups
+                        with: FirebaseManager().researchGroups
                     )
                 ]
             )

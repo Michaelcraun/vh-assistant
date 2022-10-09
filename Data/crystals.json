@@ -1,0 +1,83 @@
+{
+    "Soul Shard Farming" : {
+        "short" : "ICC",
+        "modifiers" : [
+            "Impossible",
+            "Chaotic",
+            "Crowded"
+        ],
+        "description" : "Farm soul shards easily with 21 mobs regularly spawning around you. \n1. Stay in the first room\n2. Place water around you.\n3. Bail.\n4. ????\n5. PROFIT!"
+    },
+    "Ores Galore" : {
+        "short" : "CRP",
+        "modifiers" : [
+            ""
+        ],
+        "description" : ""
+    },
+    "Gilded" : {
+        "short" : "TGH",
+        "modifiers" : [
+            "Treasure",
+            "Gilded",
+            "Hoard"
+        ],
+        "description" : "Look for gilded chests\n1. Find rooms with lots of chests\n2. Get all the gilded chests\n3. ????\n4. PROFIT!"
+    },
+    "Gilded+" : {
+        "short" : "TGHSLL",
+        "modifiers" : [
+            "Treasure",
+            "Gilded",
+            "Hoard",
+            "Super Lucky",
+            "Luckier",
+            "Lucky"
+        ],
+        "description" : "Look for gilded chests\n1. Find rooms with lots of chests\n2. Get all the gilded chests\n3. ????\n4. PROFIT!"
+    },
+    "One Lucky Guy" : {
+        "short" : "SLL",
+        "modifiers" : [
+            "Super Lucky",
+            "Luckier",
+            "Lucky"
+        ],
+        "description" : "Get all the loot with +6 levels of luck!\n1. Find rooms with lots of chests\n2. Loot EVERYTHING\n3. ????\n4. PROFIT!"
+    },
+    "The Silence" : {
+        "short" : "SP",
+        "modifiers" : [
+            "Silent",
+            "Personal Space"
+        ],
+        "description" : "Get around the vault with ease with -6 mobs spawning around you.\n1. Enter vault\n2. Have fun looting without being constantly attacked\n3. ????\n4. PROFIT!"
+    },
+    "I Can Has Artifact, plz?" : {
+        "short" : "OEJ",
+        "modifiers" : [
+            "Odyssey",
+            "Exploration",
+            "Journey"
+        ],
+        "description" : "Surely, you can find an artifact with a +90% chance.\n1. Enter the vault\n2. Complete the objective as fast as possible\n3. ????\n4. PROFIT, maybe?"
+    },
+    "The Forever Vault" : {
+        "short" : "EOE",
+        "modifiers" : [
+            "Endless",
+            "Optimistic",
+            "Extended"
+        ],
+        "description" : "Enjoy your extra 17.5 minutes of looting! Recommended to NOT put on OEJ vaults!"
+    },
+    "One Shot, One Kill" : {
+        "short" : "TSE",
+        "modifiers" : [
+            "Trivial",
+            "Simple",
+            "Easy"
+        ],
+        "description" : "One shot mobs with ease!\n1. Enter vault\n2. One shot mobs\n3. ????\n4. PROFIT!"
+    }
+}

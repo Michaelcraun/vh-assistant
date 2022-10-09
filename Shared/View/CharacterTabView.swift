@@ -9,7 +9,9 @@ import SwiftUI
 
 struct CharacterTabView: View {
     @StateObject var character: VaultCharacter
-    @ObservedObject var database: Database
+    @ObservedObject var database: FirebaseManager
+    
+    @Environment(\.isPresented) var isPresented
     
     var body: some View {
         TabView {
@@ -29,6 +31,11 @@ struct CharacterTabView: View {
                     }
                 }
         }
+        .onChange(of: isPresented) { newValue in
+            if !newValue {
+                database.save(character: database.currentCharacter)
+            }
+        }
     }
 }
 
@@ -37,9 +44,9 @@ struct CharacterTabView_Previews: PreviewProvider {
         CharacterTabView(
             character: VaultCharacter(
                 name: "Test",
-                with: Database().researchGroups
+                with: FirebaseManager().researchGroups
             ),
-            database: Database()
+            database: FirebaseManager()
         )
     }
 }

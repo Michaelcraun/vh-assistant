@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterResearchView: View {
     @StateObject var character: VaultCharacter
-    @ObservedObject var database: Database
+    @ObservedObject var database: FirebaseManager
     
     @State var isShowingDetail: Bool = false
     @State var title: String = ""
@@ -18,46 +18,8 @@ struct CharacterResearchView: View {
     var body: some View {
         ZStack {
             VStack {
-                RaisedPanel {
-                    Spacer()
-                    
-                    // Knowledge Points
-                    VStack(spacing: 12) {
-                        Image("knowledge")
-                            .frame(width: 30, height: 30)
-                        HStack {
-                            CircleButton(image: Image(systemName: "chevron.down")) {
-                                character.knowledgePoints -= 1
-                            }
-                            .disabled(character.knowledgePoints == 0)
-                            
-                            CircleButton(image: Image(systemName: "chevron.up")) {
-                                character.knowledgePoints += 1
-                            }
-                        }
-                        Text("\(character.knowledgePoints)")
-                    }
-                    
-                    Spacer()
-                    
-                    // Skill Points
-                    VStack(spacing: 12) {
-                        Image("skill")
-                            .frame(width: 30, height: 30)
-                        HStack {
-                            CircleButton(image: Image(systemName: "chevron.down")) {
-                                character.skillPoints -= 1
-                            }
-                            .disabled(character.skillPoints == 5)
-                            
-                            CircleButton(image: Image(systemName: "chevron.up")) {
-                                character.skillPoints += 1
-                            }
-                        }
-                        Text("\(character.skillPoints)")
-                    }
-                    
-                    Spacer()
+                CharacterStatView(character: character) {
+                    database.save(character: character)
                 }
                 
                 ScrollView {
@@ -87,6 +49,7 @@ struct CharacterResearchView: View {
                                         
                                         CircleButton(image: Image(systemName: "checkmark")) {
                                             character.purchase(research: research)
+                                            database.save(character: character)
                                         }
                                         .disabled(!character.canPurchase(research: research))
                                         .foregroundColor(research.purchased ? .green : character.canPurchase(research: research) ? .blue : .gray)
@@ -118,9 +81,9 @@ struct CharacterView_Previews: PreviewProvider {
         CharacterResearchView(
             character: VaultCharacter(
                 name: "A Whole New World",
-                with: Database().researchGroups
+                with: FirebaseManager().researchGroups
             ),
-            database: Database()
+            database: FirebaseManager()
         )
     }
 }

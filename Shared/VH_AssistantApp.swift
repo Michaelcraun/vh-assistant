@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct VH_AssistantApp: App {
@@ -13,5 +14,9 @@ struct VH_AssistantApp: App {
         WindowGroup {
             ContentView()
         }
+    }
+    
+    init() {
+        FirebaseApp.configure()
     }
 }
