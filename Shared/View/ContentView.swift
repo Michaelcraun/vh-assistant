@@ -10,6 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var manager = FirebaseManager()
     
+    @State private var crystalsShown: Bool = false
+    @State private var settingsShown: Bool = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -32,6 +35,30 @@ struct ContentView: View {
                 }
             }
             .errorAlert(error: $manager.error)
+            .toolbar {
+                HStack {
+                    Button {
+                        crystalsShown.toggle()
+                    } label: {
+                        Image("crystal")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                    }
+                    
+                    Button {
+                        settingsShown.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                    }
+                }
+            }
+            .sheet(isPresented: $crystalsShown) {
+                CrystalsView(crystals: manager.crystals)
+            }
+            .sheet(isPresented: $settingsShown) {
+                SettingsView()
+            }
         }
     }
     

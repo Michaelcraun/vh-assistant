@@ -69,6 +69,12 @@
 		9B96FC2928EF549D009385E4 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96FC2728EF549D009385E4 /* Firebase.swift */; };
 		9BD8A07228F3056F009DD3A0 /* CharacterStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A07128F3056F009DD3A0 /* CharacterStatView.swift */; };
 		9BD8A07328F3056F009DD3A0 /* CharacterStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A07128F3056F009DD3A0 /* CharacterStatView.swift */; };
+		9BD8A07628F30FBA009DD3A0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A07528F30FBA009DD3A0 /* SettingsView.swift */; };
+		9BD8A07728F30FBA009DD3A0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A07528F30FBA009DD3A0 /* SettingsView.swift */; };
+		9BD8A07928F30FD5009DD3A0 /* CrystalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A07828F30FD5009DD3A0 /* CrystalsView.swift */; };
+		9BD8A07A28F30FD5009DD3A0 /* CrystalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A07828F30FD5009DD3A0 /* CrystalsView.swift */; };
+		9BD8A07C28F3115F009DD3A0 /* Crystal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A07B28F3115E009DD3A0 /* Crystal.swift */; };
+		9BD8A07D28F3115F009DD3A0 /* Crystal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A07B28F3115E009DD3A0 /* Crystal.swift */; };
 		9BFB145228EBE5EF00187811 /* CharacterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB145128EBE5EF00187811 /* CharacterTabView.swift */; };
 		9BFB145328EBE5EF00187811 /* CharacterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB145128EBE5EF00187811 /* CharacterTabView.swift */; };
 		9BFB145528EBE79300187811 /* CharacterSkillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB145428EBE79300187811 /* CharacterSkillView.swift */; };
@@ -144,6 +150,9 @@
 		9B96FC2428EF531D009385E4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9B96FC2728EF549D009385E4 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		9BD8A07128F3056F009DD3A0 /* CharacterStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatView.swift; sourceTree = "<group>"; };
+		9BD8A07528F30FBA009DD3A0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9BD8A07828F30FD5009DD3A0 /* CrystalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalsView.swift; sourceTree = "<group>"; };
+		9BD8A07B28F3115E009DD3A0 /* Crystal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crystal.swift; sourceTree = "<group>"; };
 		9BFB145128EBE5EF00187811 /* CharacterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTabView.swift; sourceTree = "<group>"; };
 		9BFB145428EBE79300187811 /* CharacterSkillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSkillView.swift; sourceTree = "<group>"; };
 		9BFB145728EC6DAF00187811 /* crystals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = crystals.json; sourceTree = "<group>"; };
@@ -253,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				9B1CA88228E51BAB00D41D2A /* Ability.swift */,
+				9BD8A07B28F3115E009DD3A0 /* Crystal.swift */,
 				9B96FC2728EF549D009385E4 /* Firebase.swift */,
 				9B1CA85828E4F19600D41D2A /* Parser.swift */,
 				9B1CA85D28E4F1B900D41D2A /* Research.swift */,
@@ -287,8 +297,10 @@
 				9BD8A07128F3056F009DD3A0 /* CharacterStatView.swift */,
 				9BFB145128EBE5EF00187811 /* CharacterTabView.swift */,
 				9B1CA81C28E4F17500D41D2A /* ContentView.swift */,
+				9BD8A07828F30FD5009DD3A0 /* CrystalsView.swift */,
 				9B675BC128EBDE0D00C53F9F /* DetailView.swift */,
 				9B96FC2428EF531D009385E4 /* LoadingView.swift */,
+				9BD8A07528F30FBA009DD3A0 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -544,6 +556,8 @@
 			files = (
 				9B1CA85C28E4F1B400D41D2A /* ResearchGroup.swift in Sources */,
 				9B1CA84528E4F17600D41D2A /* ContentView.swift in Sources */,
+				9BD8A07C28F3115F009DD3A0 /* Crystal.swift in Sources */,
+				9BD8A07928F30FD5009DD3A0 /* CrystalsView.swift in Sources */,
 				9B1CA89328E5D00500D41D2A /* CharacterResearchView.swift in Sources */,
 				9B1CA8A128E5D8C300D41D2A /* UIImage+Gif.swift in Sources */,
 				9BFB145528EBE79300187811 /* CharacterSkillView.swift in Sources */,
@@ -563,6 +577,7 @@
 				9B96FC2528EF531D009385E4 /* LoadingView.swift in Sources */,
 				9BD8A07228F3056F009DD3A0 /* CharacterStatView.swift in Sources */,
 				9B1CA88928E5A84100D41D2A /* VaultCharacter.swift in Sources */,
+				9BD8A07628F30FBA009DD3A0 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B1CA89B28E5D48C00D41D2A /* RaisedPanel.swift in Sources */,
+				9BD8A07A28F30FD5009DD3A0 /* CrystalsView.swift in Sources */,
 				9B1CA89128E5B8D300D41D2A /* CharacterList.swift in Sources */,
 				9B1CA84628E4F17600D41D2A /* ContentView.swift in Sources */,
 				9B96FC2928EF549D009385E4 /* Firebase.swift in Sources */,
@@ -588,6 +604,8 @@
 				9B1CA88728E5210A00D41D2A /* Talent.swift in Sources */,
 				9B1CA89F28E5D81100D41D2A /* ImageExtension.swift in Sources */,
 				9B1CA89428E5D00500D41D2A /* CharacterResearchView.swift in Sources */,
+				9BD8A07728F30FBA009DD3A0 /* SettingsView.swift in Sources */,
+				9BD8A07D28F3115F009DD3A0 /* Crystal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

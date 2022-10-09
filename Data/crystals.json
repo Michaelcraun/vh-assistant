@@ -11,9 +11,11 @@
     "Ores Galore" : {
         "short" : "CRP",
         "modifiers" : [
-            ""
+            "Copius",
+            "Rich",
+            "Plentiful"
         ],
-        "description" : ""
+        "description" : "Get more Larimar than you will ever need with 24x vault ore chance per ore generated in the vault!\n1. Find rooms with plenty of ores that spawn (mine, crystal cove)\n2. Waste most of your time in those rooms\n3. ????\n4. PROFIT!"
     },
     "Gilded" : {
         "short" : "TGH",

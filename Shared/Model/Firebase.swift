@@ -25,14 +25,14 @@ class FirebaseManager: ObservableObject {
     var files: [String : String] = [ : ]
     let parser = Parser()
     
+    @Published var characters: [VaultCharacter] = []
+    @Published var currentCharacter: VaultCharacter?
     var abilities: [Ability] = []
+    var crystals: [Crystal] = []
+    var descriptions: [String : String] = [ : ]
     var researchGroups: [ResearchGroup] = []
     var researches: [Research] = []
     var talents: [Talent] = []
-    var descriptions: [String : String] = [ : ]
-    
-    @Published var characters: [VaultCharacter] = []
-    @Published var currentCharacter: VaultCharacter?
     
     init() {
         _ = $error.sink { error in

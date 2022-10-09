@@ -11,8 +11,6 @@ struct CharacterTabView: View {
     @StateObject var character: VaultCharacter
     @ObservedObject var database: FirebaseManager
     
-    @Environment(\.isPresented) var isPresented
-    
     var body: some View {
         TabView {
             CharacterResearchView(character: character, database: database)
@@ -30,11 +28,6 @@ struct CharacterTabView: View {
                         Text("Skills")
                     }
                 }
-        }
-        .onChange(of: isPresented) { newValue in
-            if !newValue {
-                database.save(character: database.currentCharacter)
-            }
         }
     }
 }
