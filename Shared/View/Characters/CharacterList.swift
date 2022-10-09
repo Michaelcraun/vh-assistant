@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+#warning("TODO: Need a way to delete characters")
+
 struct CharacterList: View {
     @ObservedObject var database: FirebaseManager
     
@@ -51,7 +53,7 @@ struct CharacterList: View {
                                 }
                             }
                         }
-                        .foregroundColor(Color.black)
+                        .foregroundColor(.primary)
                     }
                 }
                 .padding(2)

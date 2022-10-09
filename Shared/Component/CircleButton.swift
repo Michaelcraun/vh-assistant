@@ -16,11 +16,11 @@ struct CircleButton: View {
             image
                 .background {
                     Circle()
-                        .stroke(Color.gray, lineWidth: 1)
+                        .stroke(Color.secondary, lineWidth: 1)
                         .overlay(Circle())
                         .frame(width: 30, height: 30)
                         .foregroundColor(.white)
-                        .shadow(color: .gray, radius: 0.5, x: 2, y: 2)
+                        .shadow(color: .secondary, radius: 0.5, x: 2, y: 2)
                 }
                 .padding(4)
         }

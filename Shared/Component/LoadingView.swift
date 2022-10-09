@@ -16,7 +16,7 @@ struct LoadingView: View {
             Rectangle()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
-                .foregroundColor(.gray.opacity(0.5))
+                .foregroundColor(.primary.opacity(0.5))
             
             RaisedPanel {
                 VStack(alignment: .center) {

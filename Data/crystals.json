@@ -1,5 +1,6 @@
 {
     "Soul Shard Farming" : {
+        "id" : "015F9B11-ABC0-425C-9B41-1A26C3D588FD",
         "short" : "ICC",
         "modifiers" : [
             "Impossible",
@@ -9,6 +10,7 @@
         "description" : "Farm soul shards easily with 21 mobs regularly spawning around you. \n1. Stay in the first room\n2. Place water around you.\n3. Bail.\n4. ????\n5. PROFIT!"
     },
     "Ores Galore" : {
+        "id" : "BEFC68BD-2802-496B-85B0-A8D73817DF3B",
         "short" : "CRP",
         "modifiers" : [
             "Copius",
@@ -18,6 +20,7 @@
         "description" : "Get more Larimar than you will ever need with 24x vault ore chance per ore generated in the vault!\n1. Find rooms with plenty of ores that spawn (mine, crystal cove)\n2. Waste most of your time in those rooms\n3. ????\n4. PROFIT!"
     },
     "Gilded" : {
+        "id" : "AE2BCD04-0173-4A0E-99E8-9F5E87F24684",
         "short" : "TGH",
         "modifiers" : [
             "Treasure",
@@ -27,6 +30,7 @@
         "description" : "Look for gilded chests\n1. Find rooms with lots of chests\n2. Get all the gilded chests\n3. ????\n4. PROFIT!"
     },
     "Gilded+" : {
+        "id" : "879BDBDF-7562-4D10-A40B-169270559CEC",
         "short" : "TGHSLL",
         "modifiers" : [
             "Treasure",
@@ -39,6 +43,7 @@
         "description" : "Look for gilded chests\n1. Find rooms with lots of chests\n2. Get all the gilded chests\n3. ????\n4. PROFIT!"
     },
     "One Lucky Guy" : {
+        "id" : "4382CAF7-FBE2-4B57-B9A9-C570C8CBD313",
         "short" : "SLL",
         "modifiers" : [
             "Super Lucky",
@@ -48,6 +53,7 @@
         "description" : "Get all the loot with +6 levels of luck!\n1. Find rooms with lots of chests\n2. Loot EVERYTHING\n3. ????\n4. PROFIT!"
     },
     "The Silence" : {
+        "id" : "F3EA8B09-D956-4576-87B3-43EAB272868B",
         "short" : "SP",
         "modifiers" : [
             "Silent",
@@ -56,6 +62,7 @@
         "description" : "Get around the vault with ease with -6 mobs spawning around you.\n1. Enter vault\n2. Have fun looting without being constantly attacked\n3. ????\n4. PROFIT!"
     },
     "I Can Has Artifact, plz?" : {
+        "id" : "961E6EC0-5B98-422A-AB36-A081AD785573",
         "short" : "OEJ",
         "modifiers" : [
             "Odyssey",
@@ -65,6 +72,7 @@
         "description" : "Surely, you can find an artifact with a +90% chance.\n1. Enter the vault\n2. Complete the objective as fast as possible\n3. ????\n4. PROFIT, maybe?"
     },
     "The Forever Vault" : {
+        "id" : "B60C394A-78D4-4AB0-B4B8-051B45C58C7E",
         "short" : "EOE",
         "modifiers" : [
             "Endless",
@@ -74,6 +82,7 @@
         "description" : "Enjoy your extra 17.5 minutes of looting! Recommended to NOT put on OEJ vaults!"
     },
     "One Shot, One Kill" : {
+        "id" : "FB616CAD-ABDB-4EC0-93BA-11D030743205",
         "short" : "TSE",
         "modifiers" : [
             "Trivial",

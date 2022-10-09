@@ -54,10 +54,10 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $crystalsShown) {
-                CrystalsView(crystals: manager.crystals)
+                CrystalsView(isShown: $crystalsShown, crystals: manager.crystals)
             }
             .sheet(isPresented: $settingsShown) {
-                SettingsView()
+                SettingsView(isShown: $settingsShown)
             }
         }
     }

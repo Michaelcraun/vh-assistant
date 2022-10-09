@@ -75,6 +75,12 @@
 		9BD8A07A28F30FD5009DD3A0 /* CrystalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A07828F30FD5009DD3A0 /* CrystalsView.swift */; };
 		9BD8A07C28F3115F009DD3A0 /* Crystal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A07B28F3115E009DD3A0 /* Crystal.swift */; };
 		9BD8A07D28F3115F009DD3A0 /* Crystal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A07B28F3115E009DD3A0 /* Crystal.swift */; };
+		9BD8A08228F320F4009DD3A0 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A08128F320F4009DD3A0 /* Double+Currency.swift */; };
+		9BD8A08328F320F4009DD3A0 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A08128F320F4009DD3A0 /* Double+Currency.swift */; };
+		9BD8A08728F33104009DD3A0 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A08628F33104009DD3A0 /* SettingsButton.swift */; };
+		9BD8A08828F33104009DD3A0 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A08628F33104009DD3A0 /* SettingsButton.swift */; };
+		9BD8A08A28F3366C009DD3A0 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A08928F3366C009DD3A0 /* EmailHelper.swift */; };
+		9BD8A08B28F3366C009DD3A0 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A08928F3366C009DD3A0 /* EmailHelper.swift */; };
 		9BFB145228EBE5EF00187811 /* CharacterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB145128EBE5EF00187811 /* CharacterTabView.swift */; };
 		9BFB145328EBE5EF00187811 /* CharacterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB145128EBE5EF00187811 /* CharacterTabView.swift */; };
 		9BFB145528EBE79300187811 /* CharacterSkillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB145428EBE79300187811 /* CharacterSkillView.swift */; };
@@ -153,6 +159,9 @@
 		9BD8A07528F30FBA009DD3A0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9BD8A07828F30FD5009DD3A0 /* CrystalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalsView.swift; sourceTree = "<group>"; };
 		9BD8A07B28F3115E009DD3A0 /* Crystal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crystal.swift; sourceTree = "<group>"; };
+		9BD8A08128F320F4009DD3A0 /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
+		9BD8A08628F33104009DD3A0 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		9BD8A08928F3366C009DD3A0 /* EmailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
 		9BFB145128EBE5EF00187811 /* CharacterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTabView.swift; sourceTree = "<group>"; };
 		9BFB145428EBE79300187811 /* CharacterSkillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSkillView.swift; sourceTree = "<group>"; };
 		9BFB145728EC6DAF00187811 /* crystals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = crystals.json; sourceTree = "<group>"; };
@@ -269,6 +278,7 @@
 				9B1CA85B28E4F1B400D41D2A /* ResearchGroup.swift */,
 				9B1CA88528E5210A00D41D2A /* Talent.swift */,
 				9B1CA88828E5A84100D41D2A /* VaultCharacter.swift */,
+				9BD8A08928F3366C009DD3A0 /* EmailHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,16 +301,10 @@
 		9B1CA88E28E5B8C400D41D2A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9B1CA88F28E5B8D300D41D2A /* CharacterList.swift */,
-				9B1CA89228E5D00500D41D2A /* CharacterResearchView.swift */,
-				9BFB145428EBE79300187811 /* CharacterSkillView.swift */,
-				9BD8A07128F3056F009DD3A0 /* CharacterStatView.swift */,
-				9BFB145128EBE5EF00187811 /* CharacterTabView.swift */,
+				9BD8A08528F330F1009DD3A0 /* Settings */,
+				9BD8A08428F330AD009DD3A0 /* Characters */,
 				9B1CA81C28E4F17500D41D2A /* ContentView.swift */,
 				9BD8A07828F30FD5009DD3A0 /* CrystalsView.swift */,
-				9B675BC128EBDE0D00C53F9F /* DetailView.swift */,
-				9B96FC2428EF531D009385E4 /* LoadingView.swift */,
-				9BD8A07528F30FBA009DD3A0 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				9B1CA89628E5D3B500D41D2A /* CircleButton.swift */,
+				9B675BC128EBDE0D00C53F9F /* DetailView.swift */,
+				9B96FC2428EF531D009385E4 /* LoadingView.swift */,
 				9B1CA89928E5D48C00D41D2A /* RaisedPanel.swift */,
 			);
 			path = Component;
@@ -317,11 +323,33 @@
 		9B1CA89C28E5D7FD00D41D2A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9BD8A08128F320F4009DD3A0 /* Double+Currency.swift */,
 				9B1CA89D28E5D81000D41D2A /* ImageExtension.swift */,
 				9B1CA8A028E5D8C300D41D2A /* UIImage+Gif.swift */,
 				9B80607428F065A3006AD2A8 /* View+Error.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9BD8A08428F330AD009DD3A0 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				9B1CA88F28E5B8D300D41D2A /* CharacterList.swift */,
+				9B1CA89228E5D00500D41D2A /* CharacterResearchView.swift */,
+				9BFB145428EBE79300187811 /* CharacterSkillView.swift */,
+				9BD8A07128F3056F009DD3A0 /* CharacterStatView.swift */,
+				9BFB145128EBE5EF00187811 /* CharacterTabView.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		9BD8A08528F330F1009DD3A0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9BD8A08628F33104009DD3A0 /* SettingsButton.swift */,
+				9BD8A07528F30FBA009DD3A0 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,12 +597,15 @@
 				9B96FC2828EF549D009385E4 /* Firebase.swift in Sources */,
 				9B80607528F065A3006AD2A8 /* View+Error.swift in Sources */,
 				9B675BC228EBDE0D00C53F9F /* DetailView.swift in Sources */,
+				9BD8A08228F320F4009DD3A0 /* Double+Currency.swift in Sources */,
 				9B1CA89A28E5D48C00D41D2A /* RaisedPanel.swift in Sources */,
 				9B1CA88328E51BAB00D41D2A /* Ability.swift in Sources */,
+				9BD8A08728F33104009DD3A0 /* SettingsButton.swift in Sources */,
 				9B1CA89028E5B8D300D41D2A /* CharacterList.swift in Sources */,
 				9BFB145228EBE5EF00187811 /* CharacterTabView.swift in Sources */,
 				9B1CA85928E4F19600D41D2A /* Parser.swift in Sources */,
 				9B96FC2528EF531D009385E4 /* LoadingView.swift in Sources */,
+				9BD8A08A28F3366C009DD3A0 /* EmailHelper.swift in Sources */,
 				9BD8A07228F3056F009DD3A0 /* CharacterStatView.swift in Sources */,
 				9B1CA88928E5A84100D41D2A /* VaultCharacter.swift in Sources */,
 				9BD8A07628F30FBA009DD3A0 /* SettingsView.swift in Sources */,
@@ -592,10 +623,12 @@
 				9B96FC2928EF549D009385E4 /* Firebase.swift in Sources */,
 				9BD8A07328F3056F009DD3A0 /* CharacterStatView.swift in Sources */,
 				9BFB145628EBE79300187811 /* CharacterSkillView.swift in Sources */,
+				9BD8A08328F320F4009DD3A0 /* Double+Currency.swift in Sources */,
 				9B96FC2628EF531D009385E4 /* LoadingView.swift in Sources */,
 				9B1CA89828E5D3B500D41D2A /* CircleButton.swift in Sources */,
 				9B1CA88428E51BAB00D41D2A /* Ability.swift in Sources */,
 				9B1CA8A228E5D8C300D41D2A /* UIImage+Gif.swift in Sources */,
+				9BD8A08828F33104009DD3A0 /* SettingsButton.swift in Sources */,
 				9B675BC328EBDE0D00C53F9F /* DetailView.swift in Sources */,
 				9B80607628F065A3006AD2A8 /* View+Error.swift in Sources */,
 				9B1CA88A28E5A84100D41D2A /* VaultCharacter.swift in Sources */,
@@ -603,6 +636,7 @@
 				9BFB145328EBE5EF00187811 /* CharacterTabView.swift in Sources */,
 				9B1CA88728E5210A00D41D2A /* Talent.swift in Sources */,
 				9B1CA89F28E5D81100D41D2A /* ImageExtension.swift in Sources */,
+				9BD8A08B28F3366C009DD3A0 /* EmailHelper.swift in Sources */,
 				9B1CA89428E5D00500D41D2A /* CharacterResearchView.swift in Sources */,
 				9BD8A07728F30FBA009DD3A0 /* SettingsView.swift in Sources */,
 				9BD8A07D28F3115F009DD3A0 /* Crystal.swift in Sources */,

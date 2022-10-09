@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CrystalsView: View {
+    @Binding var isShown: Bool
     var crystals: [Crystal]
     
     var body: some View {
@@ -36,7 +37,7 @@ struct CrystalsView: View {
             .navigationTitle(Text("Crystals"))
             .toolbar {
                 Button {
-                    
+                    isShown.toggle()
                 } label: {
                     Image(systemName: "xmark")
                 }
@@ -47,8 +48,11 @@ struct CrystalsView: View {
 
 struct CrystalsView_Previews: PreviewProvider {
     static var previews: some View {
-        CrystalsView(crystals: [
+        CrystalsView(
+            isShown: .constant(true),
+            crystals: [
             Crystal(
+                name: "Ores Galore",
                 short: "CRP",
                 modifiers: [
                     "Copius",

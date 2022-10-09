@@ -12,7 +12,6 @@ class Parser {
     private let shouldLoadFromDevice: Bool = false
     
     func parseAbilities(from json: JsonObject) -> [Ability]? {
-        print("TAG:", json)
         guard let url = Bundle.main.url(forResource: "abilities", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let json = try? JSONSerialization.jsonObject(with: data) as? [String : Any] else { return nil }
@@ -50,6 +49,16 @@ class Parser {
         return nil
     }
     
+    func parseCrystals(from json: JsonObject) -> [Crystal]? {
+        var crystals: [Crystal] = []
+        for name in json.keys {
+            guard let crystal = Crystal(name: name, data: json[name] as? JsonObject) else { break }
+            crystals.append(crystal)
+        }
+        
+        return crystals.isEmpty ? nil : crystals
+    }
+    
     func parseDescriptions(from json: JsonObject) -> [String : String]? {
         guard let url = Bundle.main.url(forResource: "skill_descriptions", withExtension: "json"),
               let data = try? Data(contentsOf: url),
@@ -64,7 +73,7 @@ class Parser {
         
         for key in jsonDescriptions.keys {
             if let json = jsonDescriptions[key] as? [JsonObject],
-                let text = try? textPath.evaluate(with: json) as? [String] {
+               let text = try? textPath.evaluate(with: json) as? [String] {
                 descriptions[key] = text.joined(separator: "")
             } else if let json = jsonDescriptions[key] as? JsonObject,
                       let text = try? textPath.evaluate(with: json) as? String {

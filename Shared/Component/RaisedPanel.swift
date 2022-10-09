@@ -19,10 +19,10 @@ struct RaisedPanel<Content: View>: View {
         .padding(.vertical, 4)
         .background {
             RoundedRectangle(cornerRadius: 5)
-                .stroke(Color.gray, lineWidth: 1)
+                .stroke(Color.secondary, lineWidth: 1)
                 .overlay(RoundedRectangle(cornerRadius: 5))
                 .foregroundColor(.white)
-                .shadow(color: .gray, radius: 0.5, x: 2, y: 2)
+                .shadow(color: .secondary, radius: 0.5, x: 2, y: 2)
         }
         .padding(.horizontal, 8)
     }

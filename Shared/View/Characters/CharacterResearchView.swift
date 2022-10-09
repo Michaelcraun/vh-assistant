@@ -52,7 +52,7 @@ struct CharacterResearchView: View {
                                             database.save(character: character)
                                         }
                                         .disabled(!character.canPurchase(research: research))
-                                        .foregroundColor(research.purchased ? .green : character.canPurchase(research: research) ? .blue : .gray)
+                                        .foregroundColor(research.purchased ? .green : character.canPurchase(research: research) ? .blue : .secondary)
                                     }
                                     .padding(8)
                                 }

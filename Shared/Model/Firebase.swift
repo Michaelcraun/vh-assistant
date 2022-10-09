@@ -76,6 +76,7 @@ class FirebaseManager: ObservableObject {
                                 return
                             }
                             
+                            print("TAG: Downloading \(file)...")
                             self.step = "Downloading \(current) files..."
                             
                             group.enter()
@@ -83,7 +84,9 @@ class FirebaseManager: ObservableObject {
                                 if let error = error {
                                     self.error = error
                                 } else if let object = object {
-                                    if let researchGroups = self.parser.parseResearchGroups(from: object) {
+                                    if let crystals = self.parser.parseCrystals(from: object) {
+                                        self.crystals = crystals
+                                    } else if let researchGroups = self.parser.parseResearchGroups(from: object) {
                                         self.researchGroups = researchGroups
                                     } else if let researches = self.parser.parseResearches(from: object) {
                                         self.researches = researches
@@ -93,6 +96,8 @@ class FirebaseManager: ObservableObject {
                                         self.talents = talents
                                     } else if let descriptions = self.parser.parseDescriptions(from: object) {
                                         self.descriptions = descriptions
+                                    } else {
+                                        FirebaseManager.report(error: "Unable to parse \(object)")
                                     }
                                 } else {
                                     self.error = "Unable to download and parse latest \(current) files..."
