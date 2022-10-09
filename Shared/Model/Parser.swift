@@ -12,6 +12,7 @@ class Parser {
     private let shouldLoadFromDevice: Bool = false
     
     func parseAbilities(from json: JsonObject) -> [Ability]? {
+        print("TAG:", json)
         guard let url = Bundle.main.url(forResource: "abilities", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let json = try? JSONSerialization.jsonObject(with: data) as? [String : Any] else { return nil }

@@ -54,6 +54,12 @@ class FirebaseManager: ObservableObject {
             if let error = error {
                 self.error = error
             } else {
+                let group = DispatchGroup()
+                
+                #if DEBUG
+                self.sync(in: group)
+                #endif
+                
                 // Download files information for this specific version
                 self.step = "Downloading version information"
                 self.download(file: self.version, ext: "json") { object, error in
@@ -64,8 +70,6 @@ class FirebaseManager: ObservableObject {
                         self.files = fileList
                         
                         // Download individual files listed in the version info
-                        let group = DispatchGroup()
-                        
                         for file in self.files.keys {
                             guard let current = self.files[file] else {
                                 self.isWorking.toggle()
@@ -266,6 +270,15 @@ class FirebaseManager: ObservableObject {
                 self.error = "Could not fetch characters."
             }
         }
+    }
+    
+    private func sync(in group: DispatchGroup) {
+        // In case this fails at any point, we still want the DispatchGroup to complete,
+        // so we'll enter and leave real quick to force an update.
+        group.enter()
+        group.leave()
+        
+        #warning("TODO: Sync files from bundle with Firebase!")
     }
 }
 

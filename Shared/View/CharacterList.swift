@@ -27,7 +27,7 @@ struct CharacterList: View {
             ScrollView {
                 LazyVStack {
                     ForEach(database.characters) { character in
-                        NavigationLink(destination: CharacterTabView(character: character, database: database)) {
+                        NavigationLink(destination: CharacterResearchView(character: character, database: database)) {
                             RaisedPanel {
                                 Text(character.name)
                                 Spacer()
