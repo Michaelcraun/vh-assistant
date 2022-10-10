@@ -13,32 +13,22 @@ struct DetailView: View {
     @Binding var text: String
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.all)
-                .foregroundColor(.primary.opacity(0.5))
-                .onTapGesture {
-                    isShown.toggle()
-                }
-            
-            RaisedPanel {
-                VStack(alignment: .leading) {
-                    HStack {
-                        CircleButton(image: Image(systemName: "xmark")) {
-                            isShown.toggle()
-                        }
-                        .padding(.vertical, 2)
-                        
-                        Text(title)
-                            .bold()
-                        
-                        Spacer()
+        RaisedPanel {
+            VStack(alignment: .leading) {
+                HStack {
+                    CircleButton(image: Image(systemName: "xmark")) {
+                        isShown.toggle()
                     }
+                    .padding(.vertical, 2)
                     
-                    Text(text)
-                        .font(.caption)
+                    Text(title)
+                        .bold()
+                    
+                    Spacer()
                 }
+                
+                Text(text)
+                    .font(.caption)
             }
         }
     }

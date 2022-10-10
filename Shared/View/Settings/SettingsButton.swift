@@ -15,33 +15,32 @@ struct SettingsButton: View {
     var onTap: () -> Void
     
     var body: some View {
-        VStack {
-            Button {
-                onTap()
-            } label: {
-                RaisedPanel {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            if let icon = icon {
-                                Image(icon)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20, height: 20)
-                            }
-                            
-                            Text(title)
-                                .bold()
-                            
-                            Spacer()
-                        }
-                        Text(text)
-                            .font(.caption)
-                            .multilineTextAlignment(.leading)
+        RaisedPanel {
+            VStack(alignment: .leading) {
+                HStack {
+                    if let icon = icon {
+                        Image(icon)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
                     }
+                    
+                    Text(title)
+                        .bold()
+                    
+                    Spacer()
                 }
+                Text(text)
+                    .font(.caption)
+                    .multilineTextAlignment(.leading)
+            }
+            .foregroundColor(enabled ? nil : ThemeManager.element.disabledText)
+        }
+        .onTapGesture {
+            if enabled {
+                onTap()
             }
         }
-        .foregroundColor(enabled ? Color.primary : Color.secondary)
         .disabled(!enabled)
     }
 }
@@ -69,5 +68,6 @@ struct SettingsButton_Previews: PreviewProvider {
                     
                 }
         }
+        .preferredColorScheme(.dark)
     }
 }

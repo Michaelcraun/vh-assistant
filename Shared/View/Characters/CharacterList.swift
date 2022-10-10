@@ -8,45 +8,47 @@
 import SwiftUI
 
 struct CharacterList: View {
-    @ObservedObject var database: FirebaseManager
+    @EnvironmentObject private var viewManager: ViewManager
     
-    @State var isAddingPlaythrough: Bool = false
-    @State var newPlaythroughName: String = ""
+    @ObservedObject var database: FirebaseManager
+    @Binding var isAddingPlaythrough: Bool
+    @Binding var newPlaythroughName: String
     
     var body: some View {
-        ZStack {
-            VStack {
-                RaisedPanel {
-                    Text("Add Playthrough")
-                        .bold()
-                        .padding(.horizontal, 8)
-                        .frame(maxWidth: .infinity)
-                        .onTapGesture {
-                            isAddingPlaythrough.toggle()
-                        }
-                        .disabled(isAddingPlaythrough)
-                }
-                
-                ScrollView {
-                    LazyVStack {
-                        ForEach(database.characters) { character in
-                            NavigationLink(destination: CharacterResearchView(character: character, database: database)) {
-                                CharacterCell(character: character)
-                            }
-                            .foregroundColor(.primary)
-                        }
+        VStack {
+            RaisedPanel {
+                Text("Add Playthrough")
+                    .bold()
+                    .padding(.horizontal, 8)
+                    .frame(maxWidth: .infinity)
+                    .onTapGesture {
+                        isAddingPlaythrough.toggle()
                     }
-                    .padding(2)
-                }
-                
-                Spacer()
+                    .disabled(isAddingPlaythrough)
             }
             
-            if isAddingPlaythrough {
-                CharacterNameEntryView(isShown: $isAddingPlaythrough, name: $newPlaythroughName) {
-                    if !newPlaythroughName.isEmpty {
-                        database.newCharacterWith(name: newPlaythroughName)
+            ScrollView {
+                LazyVStack {
+                    ForEach(database.characters) { character in
+                        CharacterCell(character: character)
+                            .onTapGesture {
+                                database.currentCharacter = character
+                            }
                     }
+                }
+                .padding(2)
+            }
+            
+            Spacer()
+            
+            if database.currentCharacter != nil {
+                NavigationLink(tag: database.currentCharacter!, selection: $database.currentCharacter) {
+                    CharacterResearchView(
+                        character: database.currentCharacter!,
+                        database: database
+                    )
+                } label: {
+                    EmptyView()
                 }
             }
         }
@@ -64,7 +66,10 @@ struct CharacterList_Previews: PreviewProvider {
                         with: FirebaseManager().researchGroups
                     )
                 ]
-            )
+            ),
+            isAddingPlaythrough: .constant(false),
+            newPlaythroughName: .constant("")
         )
+        .preferredColorScheme(.dark)
     }
 }

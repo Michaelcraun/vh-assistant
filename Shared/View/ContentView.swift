@@ -8,37 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewManager = ViewManager()
     @ObservedObject var manager = FirebaseManager()
-    
-    @State private var crystalsShown: Bool = false
-    @State private var settingsShown: Bool = false
     
     var body: some View {
         NavigationView {
-            ZStack {
-                VStack {
-                    #if DEBUG
-                    Button("Crash") {
-                        fatalError("Debug crash was triggered")
-                    }
-                    .foregroundColor(.red)
-                    #endif
-                    
-                    CharacterList(database: manager)
+            VStack {
+                #if DEBUG
+                Button("Crash") {
+                    fatalError("Debug crash was triggered")
                 }
+                .foregroundColor(.red)
+                #endif
                 
-                if manager.isWorking {
-                    LoadingView(
-                        isShown: $manager.isWorking,
-                        text: $manager.step
-                    )
-                }
+                CharacterList(
+                    database: manager,
+                    isAddingPlaythrough: $viewManager.isShowingNameEntry,
+                    newPlaythroughName: $viewManager.playthroughName
+                )
             }
             .errorAlert(error: $manager.error)
             .toolbar {
                 HStack {
                     Button {
-                        crystalsShown.toggle()
+                        viewManager.isShowingCrystals.toggle()
                     } label: {
                         Image("crystal")
                             .resizable()
@@ -47,18 +40,47 @@ struct ContentView: View {
                     }
                     
                     Button {
-                        settingsShown.toggle()
+                        viewManager.isShowingSettings.toggle()
                     } label: {
                         Image(systemName: "gear")
                     }
                 }
             }
-            .sheet(isPresented: $crystalsShown) {
-                CrystalsView(isShown: $crystalsShown, crystals: manager.crystals.sorted(by: { $0.short <= $1.short }))
+            .sheet(isPresented: $viewManager.isShowingCrystals) {
+                CrystalsView(
+                    isShown: $viewManager.isShowingCrystals,
+                    crystals: manager.crystals.sorted(by: { $0.short <= $1.short })
+                )
             }
-            .sheet(isPresented: $settingsShown) {
-                SettingsView(isShown: $settingsShown, database: manager)
+            .sheet(isPresented: $viewManager.isShowingSettings) {
+                SettingsView(
+                    isShown: $viewManager.isShowingSettings,
+                    database: manager
+                )
             }
+        }
+        .environmentObject(viewManager)
+        .customPopover(isShown: $manager.isWorking) {
+            LoadingView(
+                isShown: $manager.isWorking,
+                text: $manager.step
+            )
+        }
+        .customPopover(isShown: $viewManager.isShowingNameEntry) {
+            CharacterNameEntryView(
+                isShown: $viewManager.isShowingNameEntry,
+                name: $viewManager.playthroughName) {
+                    if !viewManager.playthroughName.isEmpty {
+                        manager.newCharacterWith(name: viewManager.playthroughName)
+                    }
+                }
+        }
+        .customPopover(isShown: $viewManager.isShowingDetail) {
+            DetailView(
+                isShown: $viewManager.isShowingDetail,
+                title: $viewManager.detailTitle,
+                text: $viewManager.detailText
+            )
         }
     }
     

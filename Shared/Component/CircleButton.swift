@@ -11,9 +11,6 @@ struct CircleButton: View {
     var image: Image
     var action: () -> Void = {  }
     
-    private let color: Color = .secondary
-    private let shadowColor: Color = .primary
-    
     var body: some View {
         HStack {
             Button(action: action) {
@@ -23,12 +20,12 @@ struct CircleButton: View {
         .padding(8)
         .overlay {
             Circle()
-                .strokeBorder(shadowColor.opacity(0.02))
+                .strokeBorder(ThemeManager.element.border)
         }
         .background {
             Circle()
-                .fill(color.opacity(0.15))
-                .shadow(color: shadowColor, radius: 2.0)
+                .fill(ThemeManager.element.background)
+                .shadow(color: ThemeManager.element.shadow, radius: 2.0)
         }
     }
 }

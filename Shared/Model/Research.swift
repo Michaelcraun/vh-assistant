@@ -43,6 +43,7 @@ class Research: Identifiable {
         self.modIds = dict["modIds"] as? [String] ?? []
         
         self.current = cost
+        self.text = dict["description"] as? String ?? "ERROR"
     }
     
     func dict() -> [String : Any] {
@@ -50,7 +51,8 @@ class Research: Identifiable {
             "cost" : self.base,
             "modIds" : self.modIds,
             "name" : self.name,
-            "current" : self.current
+            "current" : self.current,
+            "description" : self.text
         ]
     }
 }

@@ -17,8 +17,11 @@ struct CharacterNameEntryView: View {
     var body: some View {
         ZStack {
             Rectangle()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .foregroundColor(.secondary)
+                .blur(radius: 1)
                 .edgesIgnoringSafeArea(.all)
-                .foregroundColor(.clear)
+                .disabled(true)
             
             RaisedPanel {
                 VStack(alignment: .center) {

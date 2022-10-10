@@ -8,27 +8,24 @@
 import SwiftUI
 
 struct RaisedPanel<Content: View>: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var spacing: CGFloat = 0.0
     @ViewBuilder var content: () -> Content
-    
-    private let color: Color = .secondary
-    private let shadowColor: Color = .primary
     
     var body: some View {
         HStack(spacing: spacing) {
             content()
         }
         .padding(8)
-        .overlay {
-            RoundedRectangle(cornerRadius: 5)
-                .strokeBorder(shadowColor.opacity(0.02))
-        }
         .background {
             RoundedRectangle(cornerRadius: 5)
-                .fill(color.opacity(0.15))
-                .shadow(color: shadowColor, radius: 2.0)
+                .foregroundColor(ThemeManager.element.background)
+                .shadow(color: ThemeManager.element.shadow, radius: 2.0)
+                .overlay(RoundedRectangle(cornerRadius: 5)
+                    .strokeBorder(ThemeManager.element.border))
         }
-        .padding(.horizontal, 8)
+        .padding(.horizontal)
     }
 }
 
@@ -36,11 +33,13 @@ struct RaisedPanel_Previews: PreviewProvider {
     static var previews: some View {
         RaisedPanel {
             Text("Hello, world!")
+                .foregroundColor(ThemeManager.element.text)
         }
         .previewLayout(.fixed(width: 300, height: 100))
         
         RaisedPanel {
             Text("Hello, world!")
+                .foregroundColor(ThemeManager.element.text)
         }
         .preferredColorScheme(.dark)
         .previewLayout(.fixed(width: 300, height: 100))

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>891861723938-252q173fp94k0ftmusj549pumd9baj5s.apps.googleusercontent.com</string>
+	<string>891861723938-rnmmjd66a0jnnbi6v5i65ok2apfo6ae0.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.891861723938-252q173fp94k0ftmusj549pumd9baj5s</string>
+	<string>com.googleusercontent.apps.891861723938-rnmmjd66a0jnnbi6v5i65ok2apfo6ae0</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAklKB0dEdoBD7sRQ95G9oGOwsop4fCpqc</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mietechnologies.vh-assistant</string>
+	<string>com.mietechnologies.vhassistant</string>
 	<key>PROJECT_ID</key>
 	<string>vh-assist</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:891861723938:ios:28f33b26146527bffa537b</string>
+	<string>1:891861723938:ios:b28a5573570284f2fa537b</string>
 </dict>
 </plist>

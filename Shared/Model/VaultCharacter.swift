@@ -95,3 +95,12 @@ extension VaultCharacter: CustomStringConvertible {
         return "VaultCharacter { id=\(id), name=\(name), knowledgePoints=\(knowledgePoints), skillPoints=\(skillPoints), abilities=, researches=\(researches.map({ $0.description }).joined(separator: ",\n")) }"
     }
 }
+
+extension VaultCharacter: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(name)
+        hasher.combine(knowledgePoints)
+        hasher.combine(skillPoints)
+    }
+}

@@ -9,13 +9,10 @@ import SwiftUI
 
 struct CharacterResearchView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject private var viewManager: ViewManager
     
     @StateObject var character: VaultCharacter
     @ObservedObject var database: FirebaseManager
-    
-    @State var isShowingDetail: Bool = false
-    @State var title: String = ""
-    @State var text: String = ""
     
     var body: some View {
         ZStack {
@@ -42,9 +39,10 @@ struct CharacterResearchView: View {
                                             Text("\(research.name) (\(research.current))")
                                         }
                                         .onTapGesture {
-                                            title = research.name
-                                            text = research.text
-                                            isShowingDetail.toggle()
+                                            print("TAG: showing detail for \(research.name) with text \(research.text)")
+                                            viewManager.detailTitle = research.name
+                                            viewManager.detailText = research.text
+                                            viewManager.isShowingDetail.toggle()
                                         }
                                         
                                         Spacer()
@@ -65,10 +63,6 @@ struct CharacterResearchView: View {
                 }
                 
                 Spacer()
-            }
-            
-            if isShowingDetail {
-                DetailView(isShown: $isShowingDetail, title: $title, text: $text)
             }
         }
         .navigationTitle(character.name)

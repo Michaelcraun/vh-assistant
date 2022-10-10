@@ -12,10 +12,12 @@ struct LoadingView: View {
     @Binding var text: String
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .edgesIgnoringSafeArea(.all)
-                .foregroundColor(.secondary.opacity(0.1))
+//        ZStack {
+//            Rectangle()
+//                .ignoresSafeArea()
+//                .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                .foregroundColor(.secondary.opacity(0.25))
+//                .edgesIgnoringSafeArea(.all)
             
             RaisedPanel {
                 VStack(alignment: .center) {
@@ -33,16 +35,20 @@ struct LoadingView: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
-        }
+//        }
     }
 }
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView(
-            isShown: .constant(true),
-            text: .constant("Delving the depths...")
-        )
+        ZStack {
+            Text("Hello, World!")
+            
+            LoadingView(
+                isShown: .constant(true),
+                text: .constant("Delving the depths...")
+            )
+        }
 //        .preferredColorScheme(.dark)
     }
 }

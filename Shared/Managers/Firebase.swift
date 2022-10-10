@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAnalytics
 import FirebaseAuth
 import FirebaseCrashlytics
 import FirebaseStorage
@@ -130,6 +131,9 @@ class FirebaseManager: ObservableObject {
             if let error = error {
                 self.error = error
             } else {
+                if self.currentCharacter == character {
+                    self.currentCharacter = nil
+                }
                 self.characters.removeAll(where: { $0.id == character.id })
             }
         }
@@ -148,6 +152,8 @@ class FirebaseManager: ObservableObject {
         let new = VaultCharacter(name: name, with: researchGroups)
         characters.append(new)
         save(character: new)
+        
+        currentCharacter = new
     }
     
     func save(character: VaultCharacter?) {
