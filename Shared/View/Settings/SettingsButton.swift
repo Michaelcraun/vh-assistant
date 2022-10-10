@@ -17,7 +17,7 @@ struct SettingsButton: View {
     var body: some View {
         VStack {
             Button {
-                #warning("TODO: Delete all characters")
+                onTap()
             } label: {
                 RaisedPanel {
                     VStack(alignment: .leading) {

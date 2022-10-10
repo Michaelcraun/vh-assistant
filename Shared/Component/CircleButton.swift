@@ -11,18 +11,24 @@ struct CircleButton: View {
     var image: Image
     var action: () -> Void = {  }
     
+    private let color: Color = .secondary
+    private let shadowColor: Color = .primary
+    
     var body: some View {
-        Button(action: action) {
-            image
-                .background {
-                    Circle()
-                        .stroke(Color.secondary, lineWidth: 1)
-                        .overlay(Circle())
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(.white)
-                        .shadow(color: .secondary, radius: 0.5, x: 2, y: 2)
-                }
-                .padding(4)
+        HStack {
+            Button(action: action) {
+                image
+            }
+        }
+        .padding(8)
+        .overlay {
+            Circle()
+                .strokeBorder(shadowColor.opacity(0.02))
+        }
+        .background {
+            Circle()
+                .fill(color.opacity(0.15))
+                .shadow(color: shadowColor, radius: 2.0)
         }
     }
 }
@@ -30,5 +36,10 @@ struct CircleButton: View {
 struct CircleButton_Previews: PreviewProvider {
     static var previews: some View {
         CircleButton(image: Image(systemName: "chevron.up"))
+        .previewLayout(.fixed(width: 300, height: 100))
+        
+        CircleButton(image: Image(systemName: "chevron.up"))
+        .preferredColorScheme(.dark)
+        .previewLayout(.fixed(width: 300, height: 100))
     }
 }

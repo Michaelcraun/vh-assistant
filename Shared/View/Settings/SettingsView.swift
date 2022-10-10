@@ -14,61 +14,72 @@ import SwiftUI
  */
 
 struct SettingsView: View {
+    @State private var store = StoreManager(identifiers: ["com.mietechnologies.vhassistant.buymeacoffee"])
+    
     @Binding var isShown: Bool
+    @ObservedObject var database: FirebaseManager
     
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var isShowingMailView = false
     
     var body: some View {
         NavigationView {
-            VStack {
+            ZStack {
                 VStack {
-                    ScrollView {
-                        SettingsButton(
-                            title: "Contact us",
-                            text: "Send us an email regarding any questions, conerns, or comments",
-                            enabled: MFMailComposeViewController.canSendMail()) {
-                                isShowingMailView.toggle()
-                            }
-                        
-                        SettingsButton(
-                            title: "Delete my playthroughs",
-                            text: "Delete all playthroughs you currently have stored") {
-                                #warning("TODO: Delete all characters")
-                            }
-                        
-                        SettingsButton(
-                            icon: "knowledge",
-                            title: "Buy us a Knowledge Star",
-                            text: "Make a small donation of \(0.99.localized()) to help us continue making awesome software") {
-                                #warning("TODO: Store integration to charge 0.99 USD")
-                            }
+                    VStack {
+                        ScrollView {
+                            SettingsButton(
+                                title: "Contact us",
+                                text: "Send us an email regarding any questions, conerns, or comments",
+                                enabled: MFMailComposeViewController.canSendMail()) {
+                                    #warning("TODO: Set up mail controller with prepopulated data")
+                                    isShowingMailView.toggle()
+                                }
+                            
+                            SettingsButton(
+                                title: "Delete my playthroughs",
+                                text: "Delete all playthroughs you currently have stored") {
+                                    database.deleteAllCharacters()
+                                }
+                            
+                            SettingsButton(
+                                icon: "knowledge",
+                                title: "Buy us a Knowledge Star",
+                                text: "Make a small donation of \(0.99.localized()) to help us continue making awesome software") {
+                                    store.purchaseProductWith(identifier: "com.mietechnologies.vhassistant.buymeacoffee")
+                                }
+                        }
+                    }
+                    
+                    Text("This app is free, fan-made software. The creators of this app do not own nor are affiliated with Minecraft or the Vault Huters mod pack.")
+                        .font(.footnote)
+                        .padding(.horizontal)
+                        .multilineTextAlignment(.center)
+                    
+                    Link(destination: URL(string: "https://www.mietechnologies.com")!) {
+                        HStack {
+                            Image("mietech")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
+                            
+                            Text("Powered by MieTech, LLC")
+                                .font(.custom("Futura", size: 16))
+                        }
+                        .foregroundColor(.primary)
+                        .padding()
                     }
                 }
                 
-                Text("This app is free, fan-made software. The creators of this app do not own or are affiliated with Minecraft or the Vault Huters mod pack.")
-                    .font(.footnote)
-                    .padding(.horizontal)
-                    .multilineTextAlignment(.center)
-                
-                Link(destination: URL(string: "https://www.mietechnologies.com")!) {
-                    HStack {
-                        Image("mietech")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 30, height: 30)
-                        
-                        Text("Powered by MieTech, LLC")
-                            .font(.custom("Futura", size: 16))
-                    }
-                    .foregroundColor(.primary)
-                    .padding()
+                if store.isWorking {
+                    LoadingView(isShown: $store.isWorking, text: $store.operation)
                 }
             }
             .navigationTitle("Settings")
+            .errorAlert(error: $store.error)
             .toolbar {
                 Button {
-                    
+                    isShown.toggle()
                 } label: {
                     Image(systemName: "xmark")
                 }
@@ -83,6 +94,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(isShown: .constant(true))
+        SettingsView(isShown: .constant(true), database: FirebaseManager())
     }
 }

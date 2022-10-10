@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CharacterResearchView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @StateObject var character: VaultCharacter
     @ObservedObject var database: FirebaseManager
     
@@ -70,8 +72,16 @@ struct CharacterResearchView: View {
             }
         }
         .navigationTitle(character.name)
-        .onChange(of: character) { character in
-            print(character.description)
+        .toolbar {
+            HStack {
+                Button {
+                    database.delete(character: character)
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "trash")
+                }
+                    
+            }
         }
     }
 }

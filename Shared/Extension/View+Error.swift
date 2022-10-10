@@ -38,7 +38,12 @@ extension String: VHError {
 
 extension String: Error {
     public var errorDescription: String? { self }
-    public var recoverySuggestion: String? { "Please contact support" }
+    public var recoverySuggestion: String? {
+        switch self {
+        case "Payment succeeded. Thank you for your help!": return nil
+        default: return "Please contact support."
+        }
+    }
 }
 
 extension View {

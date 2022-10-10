@@ -13,6 +13,7 @@ import SwiftPath
 
 class FirebaseManager: ObservableObject {
     typealias AuthorizationCompletion = (String?) -> Void
+    typealias DeleteCompletion = (String?) -> Void
     typealias DownloadCompletion = (JsonObject?, String?) -> Void
     typealias UploadCompletion = (String?) -> Void
     
@@ -121,6 +122,19 @@ class FirebaseManager: ObservableObject {
         }
     }
     
+    func delete(character: VaultCharacter?) {
+        guard let character = character, let uid = user?.uid else { return }
+        
+        let path = "character/\(uid)"
+        delete(file: character.id, ext: "json", from: path) { error in
+            if let error = error {
+                self.error = error
+            } else {
+                self.characters.removeAll(where: { $0.id == character.id })
+            }
+        }
+    }
+    
     func load(character: VaultCharacter) {
         // Save current character, if any, so no progress is lost then load
         // the new one into RAM
@@ -128,16 +142,11 @@ class FirebaseManager: ObservableObject {
         currentCharacter = character
     }
     
-    func new(character: VaultCharacter) {
+    func newCharacterWith(name: String) {
         save(character: currentCharacter)
         
-        // Update character with current research groups, abilities, and talents
-        // and add them to the currently existing characters
-        character.researches = researchGroups
-        characters.append(character)
-        
-        // Set as current and save
-        currentCharacter = character
+        let new = VaultCharacter(name: name, with: researchGroups)
+        characters.append(new)
         save(character: currentCharacter)
     }
     
@@ -168,6 +177,12 @@ class FirebaseManager: ObservableObject {
         }
     }
     
+    func deleteAllCharacters() {
+        for character in characters {
+            delete(character: character)
+        }
+    }
+    
     private func authorize(completion: @escaping AuthorizationCompletion) {
         self.step = "Authorizing..."
         
@@ -179,6 +194,18 @@ class FirebaseManager: ObservableObject {
                 completion(nil)
             } else {
                 completion("Unable to sign in")
+            }
+        }
+    }
+    
+    private func delete(file: String, ext: String? = nil, from path: String, completion: @escaping DeleteCompletion) {
+        let filename = "\(file).\(ext ?? "json")"
+        let fullPath = "\(path)/\(filename)"
+        Storage.storage().reference().child(fullPath).delete { error in
+            if let error = error {
+                completion("[\(fullPath)]\n\(error.localizedDescription)")
+            } else {
+                completion(nil)
             }
         }
     }

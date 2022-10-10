@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B16E78628F3758D00A8C4A8 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16E78528F3758D00A8C4A8 /* StoreManager.swift */; };
+		9B16E78728F3758D00A8C4A8 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16E78528F3758D00A8C4A8 /* StoreManager.swift */; };
 		9B1CA83428E4F17600D41D2A /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA83328E4F17600D41D2A /* Tests_iOS.swift */; };
 		9B1CA83628E4F17600D41D2A /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA83528E4F17600D41D2A /* Tests_iOSLaunchTests.swift */; };
 		9B1CA84028E4F17600D41D2A /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA83F28E4F17600D41D2A /* Tests_macOS.swift */; };
@@ -81,6 +83,8 @@
 		9BD8A08828F33104009DD3A0 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A08628F33104009DD3A0 /* SettingsButton.swift */; };
 		9BD8A08A28F3366C009DD3A0 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A08928F3366C009DD3A0 /* EmailHelper.swift */; };
 		9BD8A08B28F3366C009DD3A0 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A08928F3366C009DD3A0 /* EmailHelper.swift */; };
+		9BD8A08E28F35F5E009DD3A0 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A08D28F35F5E009DD3A0 /* CharacterCell.swift */; };
+		9BD8A08F28F35F5E009DD3A0 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8A08D28F35F5E009DD3A0 /* CharacterCell.swift */; };
 		9BFB145228EBE5EF00187811 /* CharacterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB145128EBE5EF00187811 /* CharacterTabView.swift */; };
 		9BFB145328EBE5EF00187811 /* CharacterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB145128EBE5EF00187811 /* CharacterTabView.swift */; };
 		9BFB145528EBE79300187811 /* CharacterSkillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB145428EBE79300187811 /* CharacterSkillView.swift */; };
@@ -119,6 +123,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9B16E78528F3758D00A8C4A8 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		9B1CA81B28E4F17500D41D2A /* VH_AssistantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VH_AssistantApp.swift; sourceTree = "<group>"; };
 		9B1CA81C28E4F17500D41D2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9B1CA81D28E4F17600D41D2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +167,7 @@
 		9BD8A08128F320F4009DD3A0 /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		9BD8A08628F33104009DD3A0 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		9BD8A08928F3366C009DD3A0 /* EmailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
+		9BD8A08D28F35F5E009DD3A0 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		9BFB145128EBE5EF00187811 /* CharacterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTabView.swift; sourceTree = "<group>"; };
 		9BFB145428EBE79300187811 /* CharacterSkillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSkillView.swift; sourceTree = "<group>"; };
 		9BFB145728EC6DAF00187811 /* crystals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = crystals.json; sourceTree = "<group>"; };
@@ -204,6 +210,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B16E78428F3757600A8C4A8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9B96FC2728EF549D009385E4 /* Firebase.swift */,
+				9B16E78528F3758D00A8C4A8 /* StoreManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		9B1CA81528E4F17500D41D2A = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +237,7 @@
 				9B1CA89528E5D3A900D41D2A /* Component */,
 				9B1CA86F28E5160800D41D2A /* Data */,
 				9B1CA89C28E5D7FD00D41D2A /* Extension */,
+				9B16E78428F3757600A8C4A8 /* Managers */,
 				9B1CA85A28E4F1A300D41D2A /* Model */,
 				9B1CA88E28E5B8C400D41D2A /* View */,
 				9B1CA81B28E4F17500D41D2A /* VH_AssistantApp.swift */,
@@ -272,7 +288,6 @@
 			children = (
 				9B1CA88228E51BAB00D41D2A /* Ability.swift */,
 				9BD8A07B28F3115E009DD3A0 /* Crystal.swift */,
-				9B96FC2728EF549D009385E4 /* Firebase.swift */,
 				9B1CA85828E4F19600D41D2A /* Parser.swift */,
 				9B1CA85D28E4F1B900D41D2A /* Research.swift */,
 				9B1CA85B28E4F1B400D41D2A /* ResearchGroup.swift */,
@@ -334,6 +349,7 @@
 		9BD8A08428F330AD009DD3A0 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				9BD8A08D28F35F5E009DD3A0 /* CharacterCell.swift */,
 				9B1CA88F28E5B8D300D41D2A /* CharacterList.swift */,
 				9B1CA89228E5D00500D41D2A /* CharacterResearchView.swift */,
 				9BFB145428EBE79300187811 /* CharacterSkillView.swift */,
@@ -585,6 +601,7 @@
 				9B1CA85C28E4F1B400D41D2A /* ResearchGroup.swift in Sources */,
 				9B1CA84528E4F17600D41D2A /* ContentView.swift in Sources */,
 				9BD8A07C28F3115F009DD3A0 /* Crystal.swift in Sources */,
+				9B16E78628F3758D00A8C4A8 /* StoreManager.swift in Sources */,
 				9BD8A07928F30FD5009DD3A0 /* CrystalsView.swift in Sources */,
 				9B1CA89328E5D00500D41D2A /* CharacterResearchView.swift in Sources */,
 				9B1CA8A128E5D8C300D41D2A /* UIImage+Gif.swift in Sources */,
@@ -604,6 +621,7 @@
 				9B1CA89028E5B8D300D41D2A /* CharacterList.swift in Sources */,
 				9BFB145228EBE5EF00187811 /* CharacterTabView.swift in Sources */,
 				9B1CA85928E4F19600D41D2A /* Parser.swift in Sources */,
+				9BD8A08E28F35F5E009DD3A0 /* CharacterCell.swift in Sources */,
 				9B96FC2528EF531D009385E4 /* LoadingView.swift in Sources */,
 				9BD8A08A28F3366C009DD3A0 /* EmailHelper.swift in Sources */,
 				9BD8A07228F3056F009DD3A0 /* CharacterStatView.swift in Sources */,
@@ -635,7 +653,9 @@
 				9B1CA84428E4F17600D41D2A /* VH_AssistantApp.swift in Sources */,
 				9BFB145328EBE5EF00187811 /* CharacterTabView.swift in Sources */,
 				9B1CA88728E5210A00D41D2A /* Talent.swift in Sources */,
+				9BD8A08F28F35F5E009DD3A0 /* CharacterCell.swift in Sources */,
 				9B1CA89F28E5D81100D41D2A /* ImageExtension.swift in Sources */,
+				9B16E78728F3758D00A8C4A8 /* StoreManager.swift in Sources */,
 				9BD8A08B28F3366C009DD3A0 /* EmailHelper.swift in Sources */,
 				9B1CA89428E5D00500D41D2A /* CharacterResearchView.swift in Sources */,
 				9BD8A07728F30FBA009DD3A0 /* SettingsView.swift in Sources */,
@@ -793,7 +813,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 96SB47X67B;
+				DEVELOPMENT_TEAM = JFH9FYM2U6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -807,7 +827,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.craunincproductions.VH-Assistant";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mietechnologies.vh-assistant";
 				PRODUCT_NAME = "VH Assistant";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -823,7 +843,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 96SB47X67B;
+				DEVELOPMENT_TEAM = JFH9FYM2U6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -837,7 +857,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.craunincproductions.VH-Assistant";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mietechnologies.vh-assistant";
 				PRODUCT_NAME = "VH Assistant";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;

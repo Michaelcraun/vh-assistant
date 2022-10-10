@@ -54,15 +54,16 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $crystalsShown) {
-                CrystalsView(isShown: $crystalsShown, crystals: manager.crystals)
+                CrystalsView(isShown: $crystalsShown, crystals: manager.crystals.sorted(by: { $0.short <= $1.short }))
             }
             .sheet(isPresented: $settingsShown) {
-                SettingsView(isShown: $settingsShown)
+                SettingsView(isShown: $settingsShown, database: manager)
             }
         }
     }
     
-    init() {        
+    init() {
+        StoreManager.askForRating()
         manager.start()
     }
 }

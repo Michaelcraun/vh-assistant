@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-#warning("TODO: Need a way to delete characters")
-
 struct CharacterList: View {
     @ObservedObject var database: FirebaseManager
     
@@ -19,6 +17,7 @@ struct CharacterList: View {
         VStack {
             RaisedPanel {
                 Text("Add Playthrough")
+                    .bold()
                     .padding(.horizontal, 8)
                     .frame(maxWidth: .infinity)
                     .onTapGesture {
@@ -30,28 +29,7 @@ struct CharacterList: View {
                 LazyVStack {
                     ForEach(database.characters) { character in
                         NavigationLink(destination: CharacterResearchView(character: character, database: database)) {
-                            RaisedPanel {
-                                Text(character.name)
-                                Spacer()
-                                VStack(spacing: 2) {
-                                    HStack {
-                                        Image("knowledge")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 16, height: 16)
-                                        Text("\(character.knowledgePoints)")
-                                            .font(.caption)
-                                    }
-                                    HStack {
-                                        Image("skill")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 16, height: 16)
-                                        Text("\(character.skillPoints)")
-                                            .font(.caption)
-                                    }
-                                }
-                            }
+                            CharacterCell(character: character)
                         }
                         .foregroundColor(.primary)
                     }
@@ -66,23 +44,13 @@ struct CharacterList: View {
             
             Button("Cancel", role: .cancel, action: {})
             Button("Add", action: {
-                if !newPlaythroughName.isEmpty {
-                    database.load(
-                        character: VaultCharacter(
-                            name: newPlaythroughName,
-                            with: database.researchGroups
-                        )
-                    )
-                }
-                
                 #if DEBUG
-                database.new(
-                    character: VaultCharacter(
-                        name: "Test",
-                        with: database.researchGroups
-                    )
-                )
+                database.newCharacterWith(name: "Test")
                 #endif
+                
+                if !newPlaythroughName.isEmpty {
+                    database.newCharacterWith(name: newPlaythroughName)
+                }
             })
         }, message: {
             Text("Message")

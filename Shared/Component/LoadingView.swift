@@ -16,7 +16,7 @@ struct LoadingView: View {
             Rectangle()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
-                .foregroundColor(.primary.opacity(0.5))
+                .foregroundColor(.secondary.opacity(0.5))
             
             RaisedPanel {
                 VStack(alignment: .center) {
@@ -44,5 +44,6 @@ struct LoadingView_Previews: PreviewProvider {
             isShown: .constant(true),
             text: .constant("Delving the depths...")
         )
+//        .preferredColorScheme(.dark)
     }
 }

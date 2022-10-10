@@ -25,6 +25,8 @@ class ResearchGroup: Identifiable {
             self.groupCostIncrease = CostIncrease(from: groupIncreases)
             self.id = name ?? title
             self.title = title
+            
+            self.modifier = dict["modifier"] as? Int ?? 0
         } else {
             FirebaseManager.report(error: "Could not initialize ResearchGroup from \(dict)")
             return nil
