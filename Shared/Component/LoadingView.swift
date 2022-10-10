@@ -14,9 +14,8 @@ struct LoadingView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
-                .foregroundColor(.secondary.opacity(0.5))
+                .foregroundColor(.secondary.opacity(0.1))
             
             RaisedPanel {
                 VStack(alignment: .center) {

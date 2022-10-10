@@ -32,7 +32,6 @@ struct SettingsView: View {
                                 title: "Contact us",
                                 text: "Send us an email regarding any questions, conerns, or comments",
                                 enabled: MFMailComposeViewController.canSendMail()) {
-                                    #warning("TODO: Set up mail controller with prepopulated data")
                                     isShowingMailView.toggle()
                                 }
                             

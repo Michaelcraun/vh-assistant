@@ -147,7 +147,7 @@ class FirebaseManager: ObservableObject {
         
         let new = VaultCharacter(name: name, with: researchGroups)
         characters.append(new)
-        save(character: currentCharacter)
+        save(character: new)
     }
     
     func save(character: VaultCharacter?) {

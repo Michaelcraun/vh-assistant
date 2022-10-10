@@ -14,47 +14,42 @@ struct CharacterList: View {
     @State var newPlaythroughName: String = ""
     
     var body: some View {
-        VStack {
-            RaisedPanel {
-                Text("Add Playthrough")
-                    .bold()
-                    .padding(.horizontal, 8)
-                    .frame(maxWidth: .infinity)
-                    .onTapGesture {
-                        isAddingPlaythrough.toggle()
-                    }
-            }
-            
-            ScrollView {
-                LazyVStack {
-                    ForEach(database.characters) { character in
-                        NavigationLink(destination: CharacterResearchView(character: character, database: database)) {
-                            CharacterCell(character: character)
+        ZStack {
+            VStack {
+                RaisedPanel {
+                    Text("Add Playthrough")
+                        .bold()
+                        .padding(.horizontal, 8)
+                        .frame(maxWidth: .infinity)
+                        .onTapGesture {
+                            isAddingPlaythrough.toggle()
                         }
-                        .foregroundColor(.primary)
-                    }
+                        .disabled(isAddingPlaythrough)
                 }
-                .padding(2)
+                
+                ScrollView {
+                    LazyVStack {
+                        ForEach(database.characters) { character in
+                            NavigationLink(destination: CharacterResearchView(character: character, database: database)) {
+                                CharacterCell(character: character)
+                            }
+                            .foregroundColor(.primary)
+                        }
+                    }
+                    .padding(2)
+                }
+                
+                Spacer()
             }
             
-            Spacer()
-        }
-        .alert("Add Playthrough", isPresented: $isAddingPlaythrough, actions: {
-            TextField("TextField", text: $newPlaythroughName)
-            
-            Button("Cancel", role: .cancel, action: {})
-            Button("Add", action: {
-                #if DEBUG
-                database.newCharacterWith(name: "Test")
-                #endif
-                
-                if !newPlaythroughName.isEmpty {
-                    database.newCharacterWith(name: newPlaythroughName)
+            if isAddingPlaythrough {
+                CharacterNameEntryView(isShown: $isAddingPlaythrough, name: $newPlaythroughName) {
+                    if !newPlaythroughName.isEmpty {
+                        database.newCharacterWith(name: newPlaythroughName)
+                    }
                 }
-            })
-        }, message: {
-            Text("Message")
-        })
+            }
+        }
         .navigationTitle("Playthroughs")
     }
 }
